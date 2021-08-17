@@ -1,0 +1,93 @@
+{
+    "key": "group_58c03bce179f5",
+    "title": "Homepage Featured Media",
+    "fields": [
+        {
+            "key": "field_58c03be5875fe",
+            "label": "Image",
+            "name": "homepage_featured_image",
+            "type": "image",
+            "instructions": "note: set images as mobile fallbacks for video",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_58c03c73875ff",
+            "label": "Portrait\/Mobile Image",
+            "name": "homepage_featured_image_mobile",
+            "type": "image",
+            "instructions": "If not set, a cropped version of the above will be used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "portrait",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_58fd8b87881f5",
+            "label": "Looping Video (mp4)",
+            "name": "looping_video_mp4",
+            "type": "file",
+            "instructions": "Upload a video in MP4 format, 1600x900 resolution. No more than 30 seconds, looping video w\/o sound.\r\n(ffmpeg command used: ffmpeg -i Input.mov -vcodec h264 -vf scale=1600:900 -acodec aac -strict -2 Output.mp4)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "mp4"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2"
+            }
+        ]
+    ],
+    "menu_order": -10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "featured_image"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1493038760
+}

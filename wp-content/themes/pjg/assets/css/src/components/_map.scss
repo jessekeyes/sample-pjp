@@ -1,0 +1,84 @@
+#map {
+  min-height: 450px;
+  width: calc(100% - 18px);
+
+  @include padding( full, map );
+
+  @include media( $tablet-break ) {
+
+    width: calc(100% - 36px);
+
+  }
+
+  @include media( $max-break-plus ) {
+
+    width: calc(100% - 72px);
+
+  }
+
+  .label {
+
+    &::after{
+      content: "";
+      display: -webkit-inline-box;
+      width: 15px;
+      height: 15px;
+      background: color(navy);
+      left: 45%;
+      bottom: calc(-15px/2);
+      position: absolute;
+      transform: rotate(45deg);
+      border-right: 1px solid color(white);
+      border-bottom: 1px solid color(white);
+    }
+
+    &.pjg{
+      background-image: url( '#{$svg}/pjg-icon.svg' );
+      background-repeat: no-repeat;
+      background-color: color(matcha-green);
+      color: color(matcha-green);
+      background-position: 50% 50%;
+      height: 69px;
+      width: 60px;
+      clip: rect(0 0 0 0);
+      text-indent: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+
+      &::after{
+        background-color: color(matcha-green);
+        left: 37.5%;
+      }
+    }
+
+    padding: 10px 12px;
+
+    @include font-allcaps;
+    font-size: 12px;
+
+    background: color(navy);
+    color: color(white);
+    text-transform: uppercase;
+    border: 1px solid color(white);
+    white-space: nowrap;
+  }
+
+
+    margin-bottom: 36px;
+
+    @include media( $tablet-break ) {
+
+      margin-bottom: 36px;
+      min-height: 800px;
+
+    }
+
+    @include media( $max-break ) {
+
+      margin-bottom: 60px;
+
+    }
+
+
+
+}

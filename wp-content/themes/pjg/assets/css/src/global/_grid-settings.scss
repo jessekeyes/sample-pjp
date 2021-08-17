@@ -1,0 +1,45 @@
+/**
+ * Grid Settings
+ */
+
+@import "neat/neat-helpers";
+
+$visual-grid: false;
+
+$column: 70px;
+$fg-column: $column;
+$gutter: 30px;
+$fg-gutter: $gutter;
+$grid-columns: 12;
+$fg-max-columns: $grid-columns;
+$max-width: 1200px;
+$max-width-plus: 1272px;
+$large-width: 1416px;
+$border-box-sizing: false;
+$default-layout-direction: LTR;
+
+$landscape: 1024px;
+$tablet-and-a-half: em( 975 );
+$tablet: 768px;
+$mobile-wide: 414px;
+$mobile: 320px;
+
+$half-gutter: ( flex-gutter() / 2 );
+$col-width: $column + $gutter;
+
+/* breakpoints */
+$large-break: new-breakpoint( min-width $large-width 12 );
+$max-break-plus: new-breakpoint( min-width $max-width-plus );
+$sixth-break: new-breakpoint( min-width 1400px 12 );
+$fifth-break: new-breakpoint( min-width $max-width 12 );
+$max-break: new-breakpoint( min-width $max-width 12 );
+$landscape-break: new-breakpoint( min-width $landscape 12 );
+
+$third-and-a-half-break: new-breakpoint( min-width $tablet max-width $tablet-and-a-half 12 );
+$smalllap-break: new-breakpoint( min-width $tablet max-width $tablet-and-a-half 12 );
+
+$third-break: new-breakpoint( min-width $tablet 12 );
+$tablet-break: new-breakpoint( min-width $tablet 12 );
+
+$phablet-break: new-breakpoint( min-width $mobile-wide 12 );
+$first-break: new-breakpoint( min-width $mobile 12 );

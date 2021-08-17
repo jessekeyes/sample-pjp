@@ -1,0 +1,563 @@
+
+
+.membership-promo {
+
+  max-width: $max-width;
+  @include center-block;
+
+  @include padding( max );
+
+  // height: 100%;
+
+  .wrapper-posts & {
+
+    border-top: none;
+    padding: 0;
+    padding-top: 19px;
+
+
+    @include media( $tablet-break ) {
+
+      padding-top: 0;
+
+    }
+
+
+  }
+
+  .inspire-tile & {
+
+    @include padding( max_row );
+    padding-top: 20px;
+
+
+    @include media( $tablet-break ) {
+
+      padding-top: 0;
+
+    }
+
+  }
+
+  .lower-modules & {
+
+    // border-top: none;
+    padding-top: 19px;
+
+
+    @include media( $tablet-break ) {
+
+      padding-top: 0;
+
+    }
+
+
+  }
+
+  @include media( $tablet-break ) {
+
+    display: flex;
+    // padding: 0;
+
+
+    .wrapper-posts & {
+
+      display: block;
+
+      .description {
+
+        max-width: none;
+
+      }
+
+    }
+
+  }
+  .bonsai {
+
+      width: 150px;
+
+      text-align: center;
+
+      @include media( $tablet-break ) {
+
+        .inspire-tile & {
+
+          padding-top: 20px;
+          margin-right: 18px;
+
+        }
+
+        .lower-modules & {
+
+          margin-right: 18px;
+
+        }
+
+      }
+
+      @include media( $landscape-break ) {
+
+        .inspire-tile & {
+
+          padding-top: 20px;
+          margin-right: 36px;
+
+        }
+
+        .lower-modules & {
+
+          margin-right: 36px;
+
+        }
+
+      }
+
+      &>a {
+
+      display: block;
+      background-image: url('#{$img}/bonsai-white.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
+
+      width: 140px;
+      height: 160px;
+
+      position: relative;
+
+      &:before {
+
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 0;
+        height: 3px;
+        width: 150px;
+        background-color: color( red );
+
+      }
+
+      @include media( $tablet-break ) {
+
+        margin-right: 10px;
+
+      }
+
+      @include media( $landscape-break ) {
+
+        width: 169px;
+        height: 193px;
+
+        padding-top: 0;
+
+        margin-right: 0;
+
+        &:before {
+
+          display: block;
+          width: 170px;
+          height: 5px;
+          left: -205px;
+          top: 0;
+
+        }
+
+        .inspire-tile & {
+
+
+          &:before {
+
+            display: block;
+
+          }
+
+        }
+
+        .row2 &,
+        .wrapper-posts &  { // child page tile version
+
+          &:before {
+
+            left: 0;
+            top: -20px;
+
+          }
+
+        }
+
+
+      }
+
+
+    }
+
+    @include media( $landscape-break ) {
+
+      width: 170px;
+
+      margin-right: 36px;
+      margin-left: 205px;
+
+      .row2 &,
+      .wrapper-posts &  { // child page tile version
+
+        margin-left: 0;
+        padding-top: 20px;
+
+      }
+
+    }
+
+  }
+
+  .description {
+
+    text-align: left;
+
+    @include media( $tablet-break ) {
+
+      .lower-modules & {
+
+        margin-top: -18px;
+
+      }
+      .inspire-tile & {
+
+        margin-top: 5px;
+
+      }
+
+    }
+
+    @include media( $landscape-break ) {
+
+      max-width: 60%;
+
+      .lower-modules &,
+      .inspire-tile & {
+
+        margin-top: 0;
+
+      }
+
+    }
+
+
+    &>.member-cta {
+
+      position: relative;
+      z-index: 10;
+      display: block;
+      width: 60px;
+      height: 38px;
+      background-image: url('#{$svg}/arrow-red.svg');
+      background-repeat: no-repeat;
+
+      border: none;
+
+      @include media( $landscape-break ) {
+
+        width: 78px;
+        height: 48px;
+
+      }
+
+
+    }
+
+
+    width: 100%;
+
+    p {
+
+      @include font-regular;
+
+      font-size: 34px;
+      line-height: 42px;
+
+      margin-bottom: 15px;
+
+      color: color( red );
+
+      @include media( $tablet-break ) {
+
+        // .lower-modules & {
+
+          font-size: 29px;
+          line-height: 42px;
+
+        // }
+
+          .inspire-tile-1 & { // child tile first placement
+
+            font-size: 22px;
+            line-height: 38px;
+
+          }
+
+      }
+
+      @include media( $landscape-break ) {
+
+        font-size: 29px;
+        line-height: 42px;
+
+        .home & {
+
+          font-size: 22px;
+          line-height: 38px;
+
+        }
+
+        .inspire-tile-1 & { // child tile first placement
+
+          font-size: 29px;
+          line-height: 42px;
+
+        }
+
+      }
+
+      @include media( $max-break ) {
+
+        font-size: 34px;
+
+
+
+          .inspire-tile-1 & { // child tile first placement
+
+            font-size: 36px;
+            line-height: 60px;
+
+          }
+
+      }
+
+
+
+      &:first-of-type {
+
+        margin-top: 20px;
+
+        .home & {
+
+          @include media( $tablet-break ) {
+
+          margin-top: -13px;
+
+        }
+
+          @include media( $landscape-break ) {
+
+            margin-top: -18px;
+
+          }
+
+        }
+
+      }
+
+      .home & {
+
+        @include media( $tablet-break ) {
+
+        font-size: 19px;
+        line-height: 1.5;
+
+      }
+
+        @include media( $landscape-break ) {
+
+          font-size: 22px;
+          line-height: 38px;
+
+        }
+      }
+
+      a {
+
+        color: color( red );
+        text-decoration: none;
+
+        &:hover {
+
+            text-decoration: underline;
+
+        }
+
+      }
+
+      @include media( $tablet-break ) {
+
+
+        .inspire-tile-1 & {
+
+          line-height: 1.7;
+
+        }
+
+        .inspire-tile-2 &,
+        .inspire-tile-1 & {
+
+          &:first-of-type {
+
+            margin-top: -18px;
+
+          }
+
+        }
+
+        .lower-modules & {
+
+          &:first-of-type {
+
+            margin-top: -15px;
+
+          }
+
+
+        }
+
+      }
+
+      @include media( $landscape-break ) {
+
+        .lower-modules & {
+
+          &:first-of-type {
+
+            margin-top: -18px;
+
+          }
+
+        }
+        .inspire-tile-2 & {
+
+          &:first-of-type {
+
+            margin-top: 0;
+
+          }
+
+        }
+
+      }
+
+      @include media( $max-break ) {
+
+        font-size: 46px;
+        line-height: 60px;
+
+        .lower-modules & {
+
+          font-size: 46px;
+          line-height: 60px;
+
+        }
+
+
+
+        &:first-of-type {
+
+          margin-top: -18px;
+
+          .wrapper-posts & {
+
+            margin-top: 20px;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .membership-home & {
+
+    background: color( red );
+
+    padding: 21px;
+
+    // margin-bottom: 9px;
+
+    @include media( $landscape-break ) {
+
+      padding: 36px;
+
+      margin-bottom: 0;
+
+    }
+
+    .bonsai {
+
+      @include media( $tablet-break ) {
+
+        margin-left: 0;
+
+      }
+
+      @include media( $landscape-break ) {
+
+        padding-top: 20px;
+
+      }
+
+
+    }
+
+    .bonsai>a {
+
+      background-image: url('#{$img}/bonsai.png');
+
+      &:before {
+
+        display: none;
+
+        background-color: color( white );
+
+        @include media( $landscape-break ) {
+
+          display: block;
+
+          top: -20px;
+          left: 0;
+
+        }
+
+      }
+
+    }
+
+    .description {
+
+      width: 100%;
+
+      p {
+
+        color: color( white );
+        a {
+
+          color: color( white );
+
+        }
+
+      }
+
+
+
+      &>.member-cta {
+
+        background-image: url('#{$svg}/arrow-home.svg');
+
+      }
+
+
+    }
+
+  }
+
+
+}

@@ -1,0 +1,347 @@
+# Copyright (C) 2015 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: pjg 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/tf4tt/pjg/issues\n"
+"POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Jesse Keyes <jesse@jessekeyes.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:15
+#@ pjg
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+#@ pjg
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:27
+#@ pjg
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:44
+#, php-format
+#@ pjg
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:29
+#, php-format
+#@ pjg
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:38
+#: comments.php:59
+#@ pjg
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41
+#: comments.php:62
+#@ pjg
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:42
+#: comments.php:63
+#@ pjg
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:75
+#@ pjg
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:16
+#@ pjg
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:16
+#, php-format
+#@ pjg
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:18
+#, php-format
+#@ pjg
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:45
+#: header.php:32
+#@ pjg
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:100
+#@ pjg
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:23
+#@ pjg
+msgid "Skip to content"
+msgstr ""
+
+#: inc/extras.php:52
+#, php-format
+#@ pjg
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:23
+#@ pjg
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:27
+#@ pjg
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:31
+#@ pjg
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:56
+#@ pjg
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:86
+#, php-format
+#@ pjg
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:91
+#, php-format
+#@ pjg
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:108
+#: inc/template-tags.php:114
+#@ pjg
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:110
+#, php-format
+#@ pjg
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:116
+#, php-format
+#@ pjg
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:122
+#@ pjg
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+#@ pjg
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+#@ pjg
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:126
+#: partials/content-page.php:26
+#@ pjg
+msgid "Edit"
+msgstr ""
+
+#: inc/template-tags.php:143
+#, php-format
+#@ pjg
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:145
+#, php-format
+#@ pjg
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:147
+#, php-format
+#@ pjg
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+#, php-format
+#@ pjg
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+#@ pjg
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:151
+#, php-format
+#@ pjg
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:151
+#@ pjg
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:153
+#, php-format
+#@ pjg
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:153
+#@ pjg
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:156
+#@ pjg
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:158
+#@ pjg
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:160
+#@ pjg
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:162
+#@ pjg
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:164
+#@ pjg
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:166
+#@ pjg
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:168
+#@ pjg
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:170
+#@ pjg
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:172
+#@ pjg
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:175
+#, php-format
+#@ pjg
+msgid "Archives: %s"
+msgstr ""
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:179
+#, php-format
+#@ pjg
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:181
+#@ pjg
+msgid "Archives"
+msgstr ""
+
+#: search.php:16
+#, php-format
+#@ pjg
+msgid "Search Results for: %s"
+msgstr ""
+
+#: partials/content-none.php:14
+#@ pjg
+msgid "Nothing Found"
+msgstr ""
+
+#: partials/content-none.php:20
+#, php-format
+#@ pjg
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: partials/content-none.php:24
+#@ pjg
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: partials/content-none.php:29
+#@ pjg
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: partials/content-page.php:19
+#: partials/content-single.php:23
+#: partials/content.php:32
+#@ pjg
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post 
+#: partials/content.php:25
+#, php-format
+#@ pjg
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""

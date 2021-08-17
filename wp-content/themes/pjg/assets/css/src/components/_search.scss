@@ -1,0 +1,350 @@
+
+
+// serch form
+
+#search-header {
+
+  // display: none;
+
+}
+
+.search-form {
+
+  width: 100%;
+
+  position: relative;
+
+  // display: none;
+
+  @include media( $landscape-break ) {
+
+    width: 500px;
+
+    top: 27px;
+
+  }
+
+  .search-content & {
+
+    top: -15px;
+    width: 100%;
+
+    margin-bottom: 21px;
+
+    @include media( $tablet-break ) {
+
+      top: 0;
+      margin-bottom: 36px;
+
+    }
+
+  }
+
+  .search-label {
+
+    @include form-label;
+    display: block;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: left;
+
+    font-size: 13px;
+
+    color: color( gray-light );
+
+    text-indent: 0;
+
+    padding: 10px 0;
+
+    margin-bottom: 5px;
+
+    .search-content & {
+
+      display: none;
+
+    }
+
+
+    @include media( $landscape-break ) {
+
+      font-size: 15px;
+      padding: 0;
+      padding-right: 153px;
+
+    }
+
+  }
+
+  .search-field {
+
+    @include form-input;
+    font-size: 18px;
+
+    @include media( $landscape-break ) {
+
+      padding: 5px 65px 7px 20px;
+      font-size: 28px;
+
+    }
+
+  }
+
+  .search-submit {
+
+    position: absolute;
+
+    bottom: 5px;
+    right: 9px;
+
+    padding: 0;
+    margin: 0;
+    width: 27px;
+    height: 27px;
+
+    border: none;
+    background-color: transparent;
+
+    background-image: url( '#{$svg}/search.svg' );
+    background-repeat: no-repeat;
+
+    text-indent: -9999px;
+    overflow: hidden;
+
+    outline: none;
+
+    &:hover {
+
+      background-image: url( '#{$svg}/search-nav.svg' );
+      background-repeat: no-repeat;
+      background-color: transparent;
+
+    }
+
+    @include media( $landscape-break ) {
+
+      bottom: 12px;
+      right: 18px;
+      width: 30px;
+      height: 30px;
+
+    }
+
+  }
+
+
+}
+
+.search-content {
+
+  position: relative;
+
+  max-width: $copy-max;
+  @include center-block;
+
+  @include padding( content );
+
+  .search-form-title {
+
+    @include font-allcaps;
+    color: color( navy );
+
+    font-weight: normal;
+    margin-bottom: 25px;
+
+    @include the-blue-bar;
+
+
+    // h2-6 are the same display
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+
+    &:before {
+
+      display: none;
+
+    }
+
+    @include media( $tablet-break ) {
+
+      font-size: 18px;
+      line-height: 20px;
+
+      &:before {
+
+        display: block;
+
+      }
+
+    }
+
+    @include media( min-width 1300px ) {
+
+      &:before {
+
+        top: 5px;
+
+      }
+
+    }
+
+  }
+
+}
+
+
+.wrapper-search {
+
+  margin-left: 0;
+  margin-right: 0;
+
+  .pagination {
+
+    width: 100%;
+    margin-top: 36px;
+    padding: 0;
+    margin-bottom: 0;
+
+  }
+
+  .item-search {
+
+    padding-top: 9px;
+
+    border-top: 3px color( navy ) solid;
+
+    width: 100%;
+
+    @include media( $tablet-break ) {
+
+      border-top: 5px color( navy ) solid;
+      padding-top: 36px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-bottom: 36px;
+
+    }
+
+    .entry-summary {
+
+      margin-bottom: 21px;
+
+      @include media( $tablet-break ) {
+
+        margin-bottom: 0;
+
+      }
+
+    }
+
+
+    .entry-header {
+
+
+      .sur-title {
+
+        color: color( gray-light );
+
+      }
+
+      .entry-title,
+      .entry-meta  {
+
+        width: 100%;
+
+        a {
+
+          text-decoration: none;
+          border: none;
+
+        }
+
+      }
+
+      .entry-meta {
+
+        @include font-subheadline;
+
+        color: color( navy );
+
+        font-size: 20px;
+        line-height: 24px;
+
+        a {
+
+          color: color( navy );
+
+        }
+
+        @include media( $tablet-break ) {
+
+          font-size: 22px;
+          line-height: 28px;
+
+        }
+
+      }
+
+    }
+
+    .img {
+
+      display: block;
+
+        border: none;
+
+      margin-bottom: 10px;
+
+      @include media( $tablet-break ) {
+
+        margin-bottom: 0;
+
+        width: 50%;
+
+        margin-right: 36px;
+        max-height: 251px;
+        overflow: hidden;
+
+      }
+
+    }
+
+
+
+    .titles-wrapper {
+
+      @include media( $tablet-break ) {
+
+        margin-top: -9px;
+
+      }
+
+    }
+
+  &.has_image {
+
+      .titles-wrapper {
+
+        @include media( $tablet-break ) {
+
+          width: 50%;
+
+          margin-top: -9px;
+
+        }
+
+      }
+
+
+    }
+
+
+
+  }
+
+
+}

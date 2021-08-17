@@ -1,0 +1,273 @@
+
+
+.filter-bar {
+
+  @include center-block;
+  max-width: $max-width;
+  @include padding( max, margin );
+
+  border-top: 3px solid color( navy );
+  padding-top: 18px;
+  padding-bottom: 18px;
+
+  @include media( $landscape-break ) {
+
+    border-top: 5px solid color( navy );
+    padding-top: 27px;
+    padding-bottom: 36px;
+
+  }
+
+  #filter {
+
+    @include center-block;
+    max-width: 927px;
+
+    opacity: 1;
+    transition: opacity 250ms;
+
+    &.loading {
+
+      opacity: 0.5;
+      transition: opacity 250ms;
+      pointer-events: none;
+
+    }
+
+    .row {
+
+      margin-bottom: 18px;
+
+      &:last-child {
+
+        margin-bottom: 0;
+
+      }
+
+      &.row-button {
+
+        text-align: center;
+
+        width: 100%;
+
+        input[type="submit"],
+        input[type="reset"] {
+
+          width: 100%;
+
+        }
+
+      }
+
+      .date-ranger {
+
+        display: flex;
+
+        .row {
+
+          width: 50%;
+
+          &:first-of-type {
+
+            margin-right: 18px;
+
+            @include media( $landscape-break ) {
+
+              margin-right: 18px;
+
+            }
+
+            @include media( $max-break ) {
+
+              margin-right: 36px;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    @include media( $tablet-break ) {
+
+      display: flex;
+      justify-content: space-between;
+
+      .row {
+
+        margin-right: 18px;
+        margin-bottom: 0;
+
+        &:last-of-type {
+
+          margin-right: 0;
+
+        }
+
+        &.select,
+        &.row-date-range {
+
+          width: 50%;
+
+        }
+
+        &.row-date-range {
+
+          margin-right: 12px;
+
+        }
+
+        &.row-button {
+
+          position: relative;
+
+          text-align: center;
+
+          margin-right: 0;
+
+          width: 27%;
+
+          input[type="submit"],
+          input[type="reset"] {
+
+            position: absolute;
+            bottom: 0;
+            left: -5px;
+
+          }
+
+        }
+
+        .date-ranger {
+
+          .row {
+
+            width: 45%;
+
+          }
+
+        }
+
+      }
+
+    // }
+
+    @include media( $landscape-break ) {
+
+      .row{
+
+        margin-right: 18px;
+
+        &.row-date-range {
+
+          margin-right: 18px;
+
+          .row {
+
+            margin-right: 18px;
+
+          }
+
+        }
+
+        &.row-button {
+
+          width: 21%;
+
+        }
+
+      }
+
+    }
+
+
+
+  }
+
+  @include media( $max-break ) {
+
+    .row{
+
+      margin-right: 36px;
+
+      &.row-button {
+
+        input[type="submit"],
+        input[type="reset"] {
+
+          left: 0;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+select {
+
+  width: 100%;
+
+  @include form-select;
+
+}
+
+label {
+
+  @include form-label;
+  text-transform: uppercase;
+
+  margin-bottom: 5px;
+
+  @include media( $landscape-break ) {
+
+    font-size: 18px;
+    line-height: 20px;
+
+    margin-bottom: 10px;
+
+  }
+
+}
+
+
+
+  .input-date {
+
+    @include form-input;
+    @include form-date;
+
+  }
+
+}
+
+
+// datepicker button panel
+
+.ui-datepicker {
+
+  .ui-datepicker-buttonpane {
+
+    .ui-datepicker-current {
+
+      display: none;
+
+    }
+
+    button {
+
+      @include button;
+
+    }
+
+  }
+
+}

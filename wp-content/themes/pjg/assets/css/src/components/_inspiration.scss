@@ -1,0 +1,212 @@
+
+
+.inspiration {
+
+  @include center-block;
+  text-align: left;
+  width: 100%;
+
+  max-width: $max-width;
+
+
+  @include pullquote;
+
+  @include padding( max );
+
+  .inspire-tile & {
+
+    @include padding( max_row );
+
+    top: 21px;
+
+    margin-bottom: 10px;
+
+  }
+
+
+  margin-top: -15px !important;
+  margin-bottom: 0;
+
+  @include media( $tablet-break ) {
+
+      top: 10px;
+
+      .inspire-tile & {
+
+        top: 10px;
+
+      }
+
+      margin-bottom: 0;
+
+      .row2 & {
+
+        margin: 0;
+
+        &:before {
+
+
+          top: 5px;
+
+        }
+
+
+      }
+
+  }
+
+  @include media( $landscape-break ) {
+
+    // min-height: 100px;
+
+  }
+
+  .inspiration-copy {
+    padding-top: 5px;
+
+    p {
+
+      font-size: 26px;
+
+      line-height: 1.1em;
+
+      @include media( $tablet-break ) {
+
+        .row2 & { // inspire thingie tile
+
+          margin-left: 0;
+
+        }
+
+      }
+
+      @include media( $max-break ) {
+
+        .row2 & { // inspire thingie tile
+
+          font-size: 30px;
+          line-height: 36px;
+
+        }
+
+      }
+
+    }
+
+    ul, ol, blockquote {
+
+      display: none;
+
+    }
+
+    // margin-bottom: 60px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+
+      @include font-regular;
+      text-transform: none;
+      font-size: 30px;
+      line-height: 36px;
+      letter-spacing: -0.02em;
+
+      color: color( pullquote );
+
+      margin-bottom: 10px;
+
+      @include media( $tablet-break ) {
+
+        font-size: 36px;
+        line-height: 42px;
+
+      }
+
+      @include media( $max-break ) {
+
+        margin-left: 206px;
+
+        .row2 & { // inspire thingie tile
+
+          margin-left: 0;
+
+          font-size: 48px;
+          line-height: 60px;
+
+        }
+
+      }
+
+    }
+
+    .font-kanji {
+
+      @include font-kanji;
+
+      @include media( $tablet-break ) {
+
+        // @include font-kanji;
+
+        font-size: inherit; // @TODO account for mobile
+        position: relative;
+        top: 3px;
+
+      }
+
+    }
+
+
+    .font-noto {
+
+      @include font-noto;
+
+    }
+
+    @include media( $tablet-break ) {
+
+      .row2 & {
+
+        padding-top: 20px;
+
+      }
+
+    }
+
+  }
+
+  .inspiration_sur_title {
+
+
+    width: 100%;
+
+    @include font-allcaps;
+
+    font-size: 14px;
+    line-height: 1.3;
+
+    color: color( pullquote );
+
+    margin-bottom: 9px;
+
+    @include media( $tablet-break ) {
+
+      font-size: 16px;
+
+      width: 170px; // @TODO check with other pullquote breakpoints?
+
+    }
+
+    @include media( $max-break ) {
+
+      position: absolute;
+      top: 36px;
+
+    }
+
+  }
+
+
+}

@@ -1,0 +1,854 @@
+// css to help with the rows for child tile templates as well as the homepage_image_featured
+
+.grid {
+
+  @include padding( full );
+
+  .home &,
+  .page-template-page-child & {
+
+    @include section-margin;
+
+
+  }
+
+  .row {
+
+    @include media( $tablet-break ) {
+
+      display: flex;
+
+      margin-bottom: 9px;
+
+      // flex-direction: column;
+
+    }
+
+    @include media( $landscape-break ) {
+
+
+      margin-bottom: 18px;
+
+      // flex-direction: row;
+
+    }
+
+    @include media( min-width 1600px ) {
+
+      margin-bottom: 36px;
+
+    }
+
+    .item {
+
+      &.inspire-tile {
+
+        margin-top: 42px;
+        margin-bottom: 50px;
+
+      }
+
+      width: 100%;
+
+      &.membership-home {
+
+        margin-bottom: 9px;
+
+      }
+
+      @include media( $tablet-break ) {
+
+        width: 50%; // default
+
+        &.membership-promo {
+
+          width: 100%;
+
+        }
+
+        &.membership-home {
+
+          margin-bottom: 0;
+
+        }
+
+        &.inspire-tile {
+
+          margin-top: 0;
+          margin-bottom: 0;
+
+        }
+
+
+        &:nth-child( odd ) {
+          margin-right: 9px;
+
+          .home & {
+
+            margin-right: 9px;
+
+
+          }
+
+        }
+
+      }
+
+      @include media( $landscape-break ) {
+
+
+          &:nth-child( odd ) {
+
+            margin-right: 18px;
+
+            .home & {
+
+              margin-right: 18px;
+
+            }
+
+          }
+
+        }
+
+
+      @include media( $max-break ) {
+
+        &:nth-child( odd ) {
+
+          margin-right: 18px;
+
+          .home & {
+
+            margin-right: 18px;
+
+          }
+
+        }
+
+      }
+
+      @include media( min-width 1600px ) {
+
+        &:first-child {
+
+          margin-right: 36px;
+
+          .home & {
+
+            margin-right: 36px;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    &.row1 { // short/long
+
+      .item {
+
+        @include media( $tablet-break ) {
+
+          // first item is shorter
+          &:nth-child( odd ) {
+
+            width: 44.7%;
+
+            .home & {
+
+              width: 50%;
+
+            }
+
+          }
+
+          // second item a bit longer
+          &:nth-child( even ) {
+
+            width: 55.55%;
+
+            .home & {
+
+              width: 60%;
+
+            }
+
+          }
+
+        }
+
+        @include media( $landscape-break ) {
+
+          // first item is shorter
+          &:nth-child( odd ) {
+
+            .home & {
+
+              width: 31% // 36.3%;
+
+            }
+
+          }
+
+          // second item a bit longer
+          &:nth-child( even ) {
+
+            .home & {
+
+              width: 67.3% // 62.3%;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    &.row3 { // long/short
+
+      .item {
+
+        @include media( $tablet-break ) {
+
+          // first item is shorter
+          &:nth-child( even ) {
+
+            width: 44.7%;
+
+          }
+
+          // second item a bit longer
+          &:nth-child( odd ) {
+
+            width: 55.55%;
+
+          }
+
+        }
+
+        @include media( $landscape-break ) {
+
+          // first item is shorter
+          &:nth-child( even ) {
+
+            .home & {
+
+              width: 50%;
+
+            }
+
+          }
+
+          // second item a bit longer
+          &:nth-child( odd ) {
+
+            .home & {
+
+              width: 50%;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    &.full {
+
+      &>.item {
+
+        width: 100%;
+        max-width: $max-width;
+        @include center-block;
+
+        margin-top: 36px;
+        margin-bottom: 36px;
+
+        &.inspire-tile {
+
+          margin-top: 42px;
+          margin-bottom: 42px;
+
+        }
+
+        @include media( $max-break ) {
+
+            margin-top: 42px;
+            margin-bottom: 42px;
+
+            &.inspire-tile {
+
+              margin-top: 45px;
+              margin-bottom: 45px;
+
+            }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+// overlayyyyyy
+
+.item-overlay {
+
+  position: relative;
+
+  @include gm( bottom );
+
+  &.cta {
+
+    width: 100%;
+
+    .home & {
+
+      margin-bottom: 0;
+
+    }
+
+  }
+
+  .permalink {
+
+    display: block;
+    width: 100%;
+
+  }
+
+  .arrow {
+
+    position: relative;
+    z-index: 10;
+    display: block;
+    width: 60px;
+    height: 38px;
+    background-image: url('#{$svg}/arrow-home.svg');
+    background-repeat: no-repeat;
+
+    border: none;
+
+    @include media( $landscape-break ) {
+
+      width: 78px;
+      height: 48px;
+
+      margin-top: 36px;
+
+    }
+
+
+  }
+
+
+  .image-gradient {
+
+    @include image-gradient;
+
+  }
+
+  img {
+
+    width: 100%;
+    height: auto;
+
+  }
+
+  .sur-title {
+
+    @include font-allcaps;
+
+    color: color( white );
+
+    font-size: 14px;
+    line-height: 16px;
+
+    margin-bottom: 5px;
+
+    @include media( $landscape-break ) {
+
+      font-size: 16px;
+      line-height: 18px;
+
+    }
+
+  }
+
+  .entry-title {
+
+    @include font-subheadline;
+    color: color( white );
+
+    font-size: 30px;
+    line-height: 32px;
+
+    margin-bottom: 9px;
+
+  }
+
+  .entry-meta {
+
+    color: color( white );
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 9px;
+
+    .event-date {
+
+      color: color( white );
+      font-size: 20px;
+      line-height: 24px;
+
+    }
+
+    @include media( $landscape-break ) {
+
+      font-size: 22px;
+      line-height: 28px;
+
+      .event-date {
+
+        font-size: 22px;
+        line-height: 28px;
+
+      }
+
+    }
+
+    &.kanji {
+
+      @include font-kanji;
+
+      font-size: 20px;
+
+      @include media( $landscape-break ) {
+
+        font-size: 24px;
+
+      }
+
+    }
+
+  }
+
+
+
+  .titles {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    padding: 18px;
+
+  }
+
+  @include media( $landscape-break ) {
+
+    // margin-bottom: 0;
+
+    .titles {
+
+      padding: 27px;
+
+    }
+
+    .entry-title {
+
+      font-size: 40px;
+      line-height: 42px;
+      max-width: 80%;
+
+      .cta-home &,
+      .page-navigation & {
+
+        @include font-headline;
+
+      }
+
+    }
+
+    &.child-post .entry-title {
+
+      @include font-headline;
+
+    }
+
+
+  }
+
+  @include media( $max-break ) {
+
+    .titles {
+
+      // padding: 36px;
+
+    }
+
+    .entry-title {
+
+      font-size: 50px;
+      line-height: 56px;
+
+    }
+
+  }
+
+
+
+
+  &.item-event { //overrides
+
+    @include media( $tablet-break ) {
+
+      .titles {
+
+        padding: 9px 18px;
+
+        .entry-title {
+
+          @include font-subheadline;
+          font-size: 30px;
+          line-height: 32px;
+
+          @at-root .event-feed-sub .entry-title {
+
+            font-size: 28px !important;
+            line-height: 34px !important;
+            max-width: 100%;
+
+          }
+
+          @at-root .event-feed-sub .arrow {
+
+            width: 60px;
+            height: 38px;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .page-navigation & {
+
+    @include media( $tablet-break ) {
+
+      width: 50%;
+
+        &:nth-child( odd ) {
+
+          text-align: right;
+          @include gm( right );
+
+          .titles {
+
+            .entry-title {
+
+              max-width: none;
+              margin-left: 20%;
+
+            }
+
+            .kanji {
+
+              margin-left: 20%;
+              padding-right: 18px;
+
+            }
+
+          }
+
+          .arrow {
+
+            transform: scaleX(-1);
+            float: right;
+            top: -9px;
+
+          }
+
+        }
+
+    }
+
+  }
+
+
+}
+
+
+.page-navigation {
+
+  @include padding( full );
+
+  margin-bottom: 54px;
+
+  @include media( $tablet-break ) {
+
+    display: flex;
+        margin-bottom: 40px;
+
+  }
+
+
+  @include media( $max-break ) {
+
+    margin-bottom: 90px;
+
+
+  }
+
+}
+
+
+
+
+.gutter-sizer {
+
+  width: 0;
+
+  @include media( $tablet-break ) {
+
+    width: 18px;
+
+  }
+
+  @include media( $max-break-plus ) {
+
+    width: 36px;
+
+  }
+
+}
+
+.wrapper-posts {
+
+  @include center-block;
+  max-width: $max-width;
+  @include padding( max, margin );
+
+  margin-bottom: 54px;
+
+  .item-excerpt {
+
+    padding-top: 9px;
+    border-top: 3px solid color( navy );
+
+    margin-bottom: 36px;
+
+    @include media( $tablet-break ) {
+
+      margin-bottom: 54px;
+
+    }
+
+    &:not( .item-overlay ) {
+
+      .img {
+
+        // width: 315px;
+        // height: 244px;
+
+      }
+
+    }
+
+
+
+      &.item-overlay {
+
+        .entry-title {
+
+          font-size: 30px;
+          line-height: 32px;
+
+          @include media( $landscape-break ) {
+
+            font-size: 40px;
+            line-height: 42px;
+
+          }
+
+          @include media( $max-break ) {
+
+            font-size: 50px;
+            line-height: 56px;
+
+          }
+
+        }
+
+      a {
+
+        color: color( white );
+
+        &>.entry-date {
+
+          color: color( white );
+
+        }
+
+        &:hover {
+
+          color: color( link-nav );
+
+          &>.entry-date {
+
+            color: color( link-nav );
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+  @include media( $tablet-break ) {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-bottom: 40px;
+
+    right: auto; // masonry absolute compensation
+
+    .item-excerpt {
+
+      width: 48.5%;
+      // width: 48%;
+      &:not( .item-overlay ) {
+
+
+
+        .img {
+
+          display: block;
+
+          // width: 355px;
+          // height: 274px;
+
+        }
+
+
+        img {
+
+          margin-bottom: 18px;
+          width: 100%;
+
+        }
+
+      }
+
+      @include media( $landscape-break ) {
+
+        border-top: 5px solid color( navy );
+
+        width: 48.5%;
+
+      }
+
+
+    }
+
+  }
+
+  @include media( $landscape-break ) {
+
+
+    margin-bottom: 90px;
+
+
+    .item-excerpt {
+
+      &:not( .item-overlay ) {
+
+        .img {
+
+          // width: 479px;
+          // height: 370px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @include media( $max-break-plus ) {
+
+
+    .item-excerpt {
+
+      &:not( .item-overlay ) {
+
+        .img {
+
+          // width: 582px;
+          // height: 450px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  &.not-found {
+
+    height: 170px !important;
+
+  }
+
+
+}
+
+
+// show hide trickery for tablet portrait
+
+.tablet-events {
+
+  @include hidden;
+
+  @include media( $tablet-break ) {
+
+    display: flex !important;
+    visibility: visible;
+
+  }
+
+  @include media( $landscape-break ) {
+
+    @include hidden;
+
+  }
+
+}

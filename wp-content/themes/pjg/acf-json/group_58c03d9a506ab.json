@@ -1,0 +1,43 @@
+{
+    "key": "group_58c03d9a506ab",
+    "title": "Display Title",
+    "fields": [
+        {
+            "key": "field_58c03da67a4eb",
+            "label": "Display title",
+            "name": "display_title",
+            "type": "text",
+            "instructions": "Title to appear over image or video. Note this is different from the main title which is used for SEO purposes.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2"
+            }
+        ]
+    ],
+    "menu_order": -10,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1489022573
+}

@@ -1,0 +1,36 @@
+{
+  "name": "pjg",
+  "title": "Portland Japanese Garden",
+  "description": "A custom WordPress theme for Portland Japanese Garden.",
+  "version": "0.1.0",
+  "homepage": "http://japanesegarden.com",
+  "license": "GPL-2.0",
+  "main": "Gruntfile.js",
+  "author": "Jesse Keyes <jesse@jessekeyes.com> (http://theforestforthetrees.co/)",
+  "repository": "https://github.com/tf4tt/pjg",
+  "bugs": "https://github.com/tf4tt/pjg/issues",
+  "scripts": {
+    "start": "grunt"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "cssnano": "^3.10.0",
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-modernizr": "^1.0.2",
+    "grunt-notify": "^0.4.5",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^2.0.0",
+    "grunt-scss-lint": "^0.5.0",
+    "matchdep": "^1.0.1"
+  }
+}

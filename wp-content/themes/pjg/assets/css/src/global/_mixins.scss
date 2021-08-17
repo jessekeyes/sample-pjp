@@ -1,0 +1,1040 @@
+/**
+ * Mixins
+ */
+
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
+
+// =Site Mixins
+
+@mixin container {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @at-root .no-mediaqueries & {
+    padding-right: $half-gutter;
+    padding-left: $half-gutter;
+  }
+}
+
+// arrow mixin, @TODO replace all existing with this
+@mixin arrow-cta {
+
+  position: relative;
+  z-index: 10;
+  display: block;
+  width: 50px;
+  height: 38px;
+  background-image: url('#{$svg}/arrow-home.svg');
+  background-repeat: no-repeat;
+
+  border: none;
+
+}
+
+
+
+@mixin tooltip-newsletter {
+
+  background: color( white );
+  padding: 10px;
+  border: 1px solid color( navy );
+
+}
+
+
+@mixin padding( $type, $margin: padding ) {
+
+  $pad-mobile: 30px;
+  $pad-tablet: 18px;
+  $pad-max-plus: 36px;
+  $pad-large-plus: 108px;
+
+  @if $type == full {
+
+    $pad-mobile: 9px;
+    $pad-tablet: 18px;
+    $pad-max-plus: 36px;
+    $pad-large-plus: 108px;
+
+  } @else if $type == title {
+
+    $pad-mobile: 9px;
+    $pad-tablet: 18px;
+    $pad-max-plus: 0px;
+    $pad-large-plus: 0px;
+
+  } @else if $type == max {
+
+    $pad-mobile: 30px;
+    $pad-tablet: 18px;
+    $pad-max-plus: 0px;
+    $pad-large-plus: 0px;
+
+  } @else if $type == header {
+
+    $pad-mobile: 30px;
+    $pad-tablet: 18px;
+    $pad-max-plus: 0px;
+    $pad-large-plus: 0px;
+
+  } @else if $type == max_row {
+
+    $pad-mobile: 21px;
+    $pad-tablet: 0px;
+    $pad-max-plus: 0px;
+    $pad-large-plus: 0px;
+
+  } @else if $type == content {
+
+    $pad-mobile: 30px;
+    $pad-tablet: 18px;
+    $pad-max-plus: 0px;
+    $pad-large-plus: 0px;
+
+  }
+
+  @if $margin == margin {
+
+    $margin: margin;
+    $pad-max-plus: auto;
+    $pad-large-plus: auto;
+
+  } @else if $margin == map {
+
+    $margin: margin;
+
+  } @else {
+
+    $margin: padding;
+
+  }
+
+  #{$margin}-left: $pad-mobile;
+  #{$margin}-right: $pad-mobile;
+
+  @include media( $tablet-break ) {
+
+    #{$margin}-right: $pad-tablet;
+    #{$margin}-left: $pad-tablet;
+
+  }
+
+  @include media( $max-break-plus ) {
+
+    #{$margin}-right: $pad-max-plus;
+    #{$margin}-left: $pad-max-plus;
+
+  }
+
+  @include media( $large-break ) {
+
+    #{$margin}-right: $pad-large-plus;
+    #{$margin}-left: $pad-large-plus;
+
+  }
+
+}
+
+@mixin gm( $direction ) {
+
+  @if $direction == right {
+
+    margin-#{$direction}: 0;
+
+  } @else if $direction == left {
+
+    margin-#{$direction}: 0;
+
+  } @else {
+
+    margin-#{$direction}: 9px;
+
+  }
+
+  @include media( $tablet-break ) {
+
+    @if $direction == bottom {
+
+      margin-#{$direction}: 0px;
+
+      // @at-root .row .item {
+      //
+      //   margin-#{$direction}: 0 !important;
+      //
+      // }
+
+    } @else {
+
+      margin-#{$direction}: 18px;
+
+    }
+
+    // margin-#{$direction}: 18px;
+
+  }
+
+  @include media( $large-width ) {
+
+    @if $direction == bottom {
+
+      margin-#{$direction}: 0px;
+
+    } @else {
+
+      margin-#{$direction}: 36px;
+
+    }
+
+  }
+
+}
+
+@mixin image-gradient { // used by image overlays
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(0,0,0,.4) 17%,rgba(0,0,0,0) 100%);
+  z-index: 9;
+  pointer-events: none;
+
+  @at-root .permalink:hover ~ .image-gradient {
+
+    background: linear-gradient(120deg, rgba(0,0,0,.6) 17%,rgba(0,0,0,0) 100%);
+
+  }
+
+  @include media( $tablet-break ) {
+
+    @at-root .featured-image .image-gradient { // @TODO account for galleries, check youtub?
+
+      background: linear-gradient(45deg, rgba(0,0,0,.4) 17%,rgba(0,0,0,0) 100%);
+
+    }
+
+    @at-root .page-navigation>.navigation-item:nth-child( odd )  .image-gradient {
+
+      background: linear-gradient(-120deg, rgba(0,0,0,.4) 17%,rgba(0,0,0,0) 100%);
+
+    }
+
+    @at-root .page-navigation>.navigation-item:nth-child( odd ):hover  .image-gradient {
+
+        background: linear-gradient(-120deg, rgba(0,0,0,.6) 17%,rgba(0,0,0,0) 100%);
+
+    }
+
+  }
+
+}
+
+
+@mixin fake-img {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  line-height: 0;
+
+  img {
+    border: 0;
+    clip: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    position: static;
+    width: auto;
+
+    .js & {
+      @include visuallyhidden;
+    }
+  }
+}
+
+// =Utility Classes
+
+// Color Map Util
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+// Center Block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Antialias fonts
+@mixin antialias {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Image Replacement
+@mixin ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+  }
+}
+
+// Hide from both screenreaders and browsers: h5bp.com/u
+@mixin hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin cloak {
+
+  opacity: 0;
+  pointer-events: none;
+
+}
+
+
+// Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
+@mixin focusable {
+  &:active,
+  &:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+
+    @include visuallyhidden;
+  }
+}
+
+
+// Hide visually and from screenreaders, but maintain layout
+@mixin invisible {
+  visibility: hidden;
+}
+
+
+// Clearfix
+@mixin clearfix() {
+
+&:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+  clear: both;
+}
+
+
+// Make elements appear clickable
+@mixin clickable {
+  cursor: pointer;
+}
+
+@mixin no-list {
+  &,
+  & ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+
+    li { list-style-type: none; }
+  }
+}
+
+@mixin yes-list {
+  & ul,
+  & ol {
+    margin-bottom: 2em;
+    padding-left: 25px;
+  }
+
+  & ul li {
+    list-style-type: disc;
+  }
+
+  & ol li {
+    list-style-type: decimal;
+  }
+}
+
+@mixin dynamic-content-feed {
+
+  display: flex;
+
+  .entry-title {
+
+    margin-top: -6px;
+    width: 100%
+
+  }
+
+  .entry-media {
+
+    margin-bottom: 0;
+
+    width: 50%;
+    margin-right: 15px;
+
+    @include media( $tablet-break ) {
+
+      width: 21%;
+      margin-right: 27px;
+
+    }
+
+  }
+
+  .entry-header-wrapper {
+
+    width: 50%;
+
+    @include media( $tablet-break ) {
+
+      width: auto;
+
+    }
+
+  }
+
+
+}
+
+@mixin no-button {
+  padding: 0;
+
+  background-color: transparent;
+
+  font-size: 1em;
+  text-shadow: none;
+
+  border: 0;
+  border-radius: 0;
+
+  box-shadow: none;
+
+  &:hover,
+  &:active,
+  &:focus { box-shadow: none; }
+}
+
+
+
+
+@mixin button {
+
+  display: inline-block;
+
+  padding: 7px 15px 8px;
+  border: 1px solid color( navy );
+
+  cursor: pointer;
+
+  @include font-allcaps;
+  font-size: 15px;
+  line-height: 1.2;
+  color: color( navy );
+
+  text-decoration: none;
+  background-color: color( white );
+
+  border-radius: 0;
+
+  .no-touchevents & {
+
+    &:hover {
+
+      background: color( navy );
+      color: color( white );
+
+
+        text-decoration: none;
+
+    }
+
+  }
+
+}
+
+@mixin button-dark {
+
+    background: color( navy );
+    color: color( white );
+    border-color: color( white );
+
+    &:hover {
+
+      background: color( white );
+      color: color( navy );
+      border-color: color( navy );
+
+    }
+
+  }
+
+
+
+
+// Helper class to fix some Mozilla Flexbox issues. See _flexbox.scss
+@-moz-document url-prefix() {
+  %mozbox {
+    width: 100%;
+    -moz-box-sizing: border-box;
+  }
+}
+
+// Display list as columns
+@mixin list-columns {
+  margin-bottom: 2em;
+
+  @include no-list;
+  @include columns( 2 );
+
+  @include media( $third-break ) {
+    @include columns( 4 );
+  }
+
+  @at-root .no-csscolumns {
+    li {
+      display: inline-block;
+      width: 33%;
+    }
+  }
+}
+
+
+// style shorthands
+
+@mixin copy-margin {
+
+  margin-bottom: calc( 55px - 30px ); // compensate for lineheight
+
+  @include media( $tablet-break ) {
+
+    margin-bottom: calc( 76px - 50px ); // compensate for lineheight
+
+  }
+
+}
+
+
+// video embeds
+
+%video { // assumes this is on a wrapping <p>
+
+	height: 0;
+	left: 0;
+	width: 100%;
+	// margin: 0 auto $gutter;
+	// padding-bottom: 56.25%;
+  padding-bottom: 63.25%;
+	text-align: center;
+	position: relative;
+
+	&>iframe {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+	}
+
+  @include media( $tablet-break ) {
+
+    padding-bottom: 56.25%;
+
+  }
+
+  @include media( $landscape-break ) {
+
+    // padding-bottom: 85.6%;
+    padding-bottom: 70.25%;
+
+  }
+
+
+}
+
+@mixin the-blue-bar {
+
+  &:before {
+
+    content: '';
+    position: absolute;
+    top: -36px;
+    width: 85px;
+    height: 3px;
+    background: color( navy );
+
+    @include media( $tablet-break ) {
+
+      top: -15px;
+
+    }
+
+    @include media( $landscape-break ) {
+
+      top: -15px;
+
+      width: 100px;
+
+      height: 5px;
+
+    }
+
+    // @include media( $max-break ) {
+    //
+    //   top: -36px;
+    //   width: 170px;
+    //
+    //
+    // }
+
+
+    // @include media( $max-break-plus ) {
+    //
+    //   top: 20px; // p graph
+    //   left: calc( -170px - 36px );
+    //   width: 170px;
+    //
+    //
+    // }
+
+    @include media( min-width 1200px ) {
+
+      top: 20px; // p graph
+      left: calc( -170px - 36px );
+      width: 170px;
+
+    }
+
+  }
+
+}
+
+
+@mixin section-margin {
+
+  margin-bottom: 54px;
+
+  @include media( $tablet-break ) {
+
+    margin-bottom: 40px;
+  }
+
+  @include media( $max-break ) {
+
+    margin-bottom: 90px;
+
+  }
+
+}
+
+
+@mixin pullquote {
+
+  position: relative;
+  display: block;
+  margin-bottom: 2em;
+  margin-top: 50px;
+
+  &:before {
+
+    content:'';
+
+    position: absolute;
+    top: -15px;
+    width: 150px;
+    height: 3px;
+    background: color( pullquote );
+
+    @include media( $landscape-break ) {
+
+      height: 5px;
+      width: 170px;
+
+    }
+
+  }
+
+  a {
+
+    color: color( link-hover );
+
+    &:hover {
+
+      text-decoration: none;
+
+    }
+
+  }
+
+  p {
+
+    @include font-regular;
+    font-size: 26px;
+    line-height: 38px;
+    letter-spacing: -0.02em;
+
+    color: color( pullquote );
+
+    cite {
+
+      @include font-allcaps;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.05em;
+
+      @include media( $tablet-break ) {
+
+        font-size: 20px;
+        line-height: 24px;
+
+      }
+
+      .japanese-translated & {
+
+        @include font-japanese-sans;
+
+      }
+
+      .chinese-translated & {
+
+        @include font-chinese-sans;
+
+      }
+
+
+    }
+
+    .japanese-translated & {
+
+      @include font-japanese-sans;
+
+    }
+
+    .chinese-translated & {
+
+      @include font-chinese-sans;
+
+    }
+
+  }
+
+  // @include media( $landscape-break ) {
+
+
+    display: inline-block;
+    margin-top: 20px;
+
+    &:before {
+      top: -5px;
+      // width: 170px;
+
+    }
+
+
+    &.alignleft {
+
+
+      float: none;
+      margin-right: 0;
+      margin-left: 0;
+      p {
+
+        margin-left: auto;
+
+      }
+
+    }
+
+    &.alignright {
+
+      float: none;
+      margin-right: 0;
+      margin-left: 0;
+
+      p {
+
+        margin-left: auto;
+
+      }
+
+    }
+
+    p {
+
+      font-size: 36px;
+      line-height: 1.5em;
+
+    }
+
+  // }
+
+  @include media( $landscape-break ) {
+
+    &.alignleft {
+
+      float: left;
+
+
+      margin-left: -84px;
+
+      max-width: 340px;
+      margin-right: 2em;
+
+    }
+
+    &.alignright {
+
+      float: right;
+
+      margin-right: -84px;;
+
+      max-width: 340px;
+      margin-left: 2em;
+
+    }
+  }
+
+  @include media( $max-break ) {
+
+    &:before {
+      top: 20px;
+      width: 170px;
+
+    }
+
+    p {
+
+      margin-left: 206px;
+
+    }
+
+    &.alignleft {
+
+      &:before {
+
+        top: -5px;
+
+      }
+
+
+      float: left;
+
+      margin-left: calc( -206px + 36px );
+
+
+    }
+
+    &.alignright {
+
+      &:before {
+
+        top: -5px;
+
+      }
+
+
+      float: right;
+
+      margin-right: calc( -206px + 36px );
+      margin-left: 2em;
+
+    }
+
+  }
+
+  @include media( min-width 1272px ) {
+
+    &.alignleft {
+
+      margin-left: calc( -206px );
+
+    }
+
+    &.alignright {
+
+      margin-right: calc( -206px );
+
+    }
+  }
+
+}
+
+
+
+
+
+// fonts
+
+@mixin font-allcaps {
+
+  font-family: 'AddingtonCF-DemiBold', serif;
+  text-transform: uppercase;
+
+}
+
+@mixin font-regular {
+
+  font-family: 'AddingtonCF-Light', serif;
+  text-transform: none;
+
+}
+
+
+@mixin font-italic {
+
+  font-family: 'AddingtonCF-LightItalic', serif;
+  text-transform: none;
+
+}
+
+@mixin font-headline {
+
+  font-family: 'Roboto-Thin', sans-serif;
+  text-transform: none;
+
+}
+
+@mixin font-headline-italic {
+
+  font-family: 'Roboto-ThinItalic', sans-serif;
+  text-transform: none;
+
+}
+
+@mixin font-subheadline {
+
+  font-family: 'Roboto-Light', sans-serif;
+  text-transform: none;
+
+}
+
+@mixin font-subheadline-italic {
+
+  font-family: 'Roboto-LightItalic', sans-serif;
+  text-transform: none;
+
+}
+
+@mixin font-bug {
+
+  font-family: 'Roboto-Medium', sans-serif;
+  text-transform: none;
+
+}
+
+@mixin font-bug-italic {
+
+  font-family: 'Roboto-MediumItalic', sans-serif;
+  text-transform: none;
+
+}
+
+@mixin font-kanji {
+
+  @include font-noto;
+
+  @include media( $tablet-break ) {
+
+    font-family: 'Kanji', serif;
+    text-transform: none;
+
+  }
+
+}
+
+@mixin font-japanese {
+
+  font-family: "Noto Serif", "Noto Serif CJK JP", "HiraMinPro-W3", "Hiragino Mincho Pro W3", "Hiragino Mincho Pro", "ヒラギノ明朝 ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", "MS Mincho", serif !important;
+  text-transform: none;
+
+}
+
+@mixin font-japanese-sans {
+
+  font-family: "Noto", "Noto Sans CJK JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", メイリオ, sans-serif !important;
+  text-transform: none;
+
+}
+
+@mixin font-noto {
+
+  font-family: "Noto", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", メイリオ, sans-serif !important;
+  text-transform: none;
+
+}
+
+@mixin font-noto-serif {
+
+  font-family: "Noto Serif", Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif !important;
+  text-transform: none;
+
+}
+
+// source: http://www.kendraschaefer.com/2012/06/chinese-standard-web-fonts-the-ultimate-guide-to-css-font-family-declarations-for-web-design-in-simplified-chinese/ and https://www.google.com/get/noto/help/guidelines/
+@mixin font-chinese {
+
+  font-family: "Noto Serif", "Noto Serif CJK SC", Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", serif !important;
+  text-transform: none;
+
+}
+
+@mixin font-chinese-sans {
+
+  font-family: "Noto", "Noto Sans CJK SC", Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", serif !important;
+  text-transform: none;
+
+}

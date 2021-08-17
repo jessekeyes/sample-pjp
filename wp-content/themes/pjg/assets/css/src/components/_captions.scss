@@ -1,0 +1,45 @@
+/**
+ * Captions
+ */
+
+
+.wp-caption {
+
+  @include copy-margin;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 100%;
+
+  img[class*="wp-image-"] {
+    @include center-block;
+  }
+
+  .wp-caption-text {
+    margin: 5px 0 0;
+    @include font-italic;
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: color( caption );
+
+    cite {
+
+      color: color( meta-title );
+
+    }
+
+    .font-noto {
+
+      @include font-noto;
+
+    }
+
+    .font-kanji {
+
+      @include font-kanji;
+
+    }
+
+  }
+
+}

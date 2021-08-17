@@ -1,0 +1,606 @@
+/**
+ * Copy
+ */
+
+@mixin copy-style {
+
+  @include gform-structure;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  dt,
+  .gform_title,
+  h2.gsection_title {
+
+    @include font-allcaps;
+    color: color( navy );
+
+    font-weight: normal;
+    margin-bottom: 25px;
+
+
+    // h4-6 are the same display
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+
+    @include media( $tablet-break ) {
+
+      font-size: 18px;
+      line-height: 20px;
+
+    }
+
+    .japanese-translated & {
+
+      @include font-japanese-sans;
+      // font-weight: 300;
+
+    }
+
+    .chinese-translated & {
+
+      @include font-chinese-sans;
+      // font-weight: 300;
+
+    }
+
+  }
+
+  h1,
+  .gform_title,
+  h2.gsection_title {
+
+    @include font-subheadline;
+    text-transform: none;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+
+    margin-bottom: 10px;
+
+    @include media( $tablet-break ) {
+
+      font-size: 36px;
+      line-height: 42px;
+
+    }
+
+    .japanese-translated & {
+
+      @include font-japanese-sans;
+
+    }
+
+    .chinese-translated & {
+
+      @include font-chinese-sans;
+
+    }
+
+  }
+
+  h2 {
+
+    @include font-subheadline;
+    text-transform: none;
+    letter-spacing: -.02em;
+    margin-bottom: 6px;
+
+    font-size: 24px;
+    line-height: 30px;
+
+    @include media( $tablet-break ) {
+
+      font-size: 28px;
+      line-height: 34px;
+
+    }
+
+  }
+
+  h3 {
+
+    @include media( $tablet-break ) {
+
+      font-size: 20px;
+      line-height: 24px;
+
+    }
+
+  }
+
+  // if h2-6 follows an h1, adjust for margins
+  h1 + h1,
+  h1 + h2,
+  h1 + h3,
+  h1 + h4,
+  h1 + h5,
+  h1 + h6
+   {
+
+    margin-top: 20px;
+
+  }
+
+  h2 + h1,
+  h2 + h2,
+  h2 + h3,
+  h2 + h4,
+  h2 + h5,
+  h2 + h6
+   {
+
+    margin-top: 20px;
+
+  }
+
+  h1 + p,
+  h2 + p,
+  h3 + p,
+  h4 + p,
+  h5 + p,
+  h6 + p
+   {
+
+    margin-top: -10px;
+
+    .japanese-translated &,
+    .chinese-translated & {
+
+      margin-top: 0;
+
+    }
+
+  }
+
+  h1 + ul,
+  h2 + ul,
+  h3 + ul,
+  h4 + ul,
+  h5 + ul,
+  h6 + ul,
+  h1 + ol,
+  h2 + ol,
+  h3 + ol,
+  h4 + ol,
+  h5 + ol,
+  h6 + ol
+   {
+
+    margin-top: 20px;
+
+  }
+
+  &>p,
+  &>.sponsor-grid p,
+  &>.accordion-grid p,
+  .gform_description,
+  .validation_error,
+  .gform_confirmation_message,
+  div[class^="embed-"],
+  div[class*=" embed-"] {
+
+    @include font-regular;
+
+    font-size: 17px;
+    line-height: 35px;
+    letter-spacing: -0.02em;
+
+    color: color( copy );
+
+    @include media( $tablet-break ) {
+
+      font-size: 18px;
+      line-height: 40px;
+
+
+    }
+
+    @include copy-margin;
+
+    .japanese-translated & {
+
+      @include font-japanese-sans;
+
+      font-size: 20px;
+      line-height: 1.5;
+
+    }
+
+    .chinese-translated & {
+
+      @include font-chinese-sans;
+
+      font-size: 20px;
+      line-height: 1.5;
+
+    }
+
+  }
+
+  //inline link
+
+  a {
+
+    text-decoration: none;
+    color: color( navy );
+    border-bottom: 1px solid color( link-hover );
+
+    &:hover {
+
+      color: color( link-hover );
+      border-bottom: none;
+
+    }
+
+    &.button {
+
+      @include button;
+
+      margin-bottom: 27px;
+
+    }
+
+  }
+
+
+  ul,
+  ol,
+  dl {
+
+    margin-top: 0.4em;
+    margin-left: 15px;
+    @include copy-margin;
+
+
+    li,
+    dd {
+
+      @include font-regular;
+
+      font-size: 17px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+
+      margin-bottom: 30px;
+
+      color: color( copy );
+
+      @include media( $tablet-break ) {
+
+        font-size: em( 18 );
+
+
+      }
+
+      &:last-of-type {
+
+        margin-bottom: 0;
+
+      }
+
+    }
+
+    dt {
+
+      margin-left: -15px;
+
+    }
+
+    .japanese-translated & {
+
+      @include font-japanese-sans;
+
+    }
+
+    .chinese-translated & {
+
+      @include font-chinese-sans;
+
+    }
+
+  }
+
+  ul,
+  dl {
+
+    list-style-type: none;
+
+    & > li,
+    & > dd {
+
+      // text-indent: -5px;
+
+      &:before {
+
+        content: "–";
+        margin-left: -15px;
+        position: absolute;
+
+      }
+
+    }
+
+  }
+
+  hr:not( .rule-loading ) {
+    border: none;
+
+    height: 18px;
+    width: 59px;
+
+    margin-top: -5px;
+    margin-bottom: 20px;
+
+    background-image: url('#{$svg}/ornament.svg');
+    background-repeat: no-repeat;
+
+    @include media( $tablet-break ) {
+
+      height: 24px;
+      width: 74px;
+      margin-bottom: 45px;
+
+    }
+
+  }
+
+
+  dfn,
+  cite,
+  em,
+  i {
+    @include font-italic;
+
+    .japanese-translated & {
+
+      @include font-japanese-sans;
+
+    }
+
+    .chinese-translated & {
+
+      @include font-chinese-sans;
+
+    }
+
+    &.fa { // loads font awesome icons
+
+      font-family: FontAwesome;
+
+    }
+  }
+
+  blockquote { // default, without shortcode, floats center
+
+    @include pullquote;
+
+    & +.has-the-blue-bar {
+
+      &:before {
+
+        display: none;
+
+      }
+
+    }
+
+    .event-sidebar & {
+
+      &:first-child {
+
+        margin-left: 0 !important;
+
+        width: 100% !important;
+
+        @include media( $landscape-break ) {
+
+          margin-top: -2px;
+
+        }
+
+        p {
+
+          margin-left: 0;
+
+        }
+
+        &:before {
+
+          display: none;
+
+        }
+
+      }
+
+    }
+
+
+  }
+
+
+  address {
+    margin: 0 0 1.5em;
+  }
+
+  pre {
+    max-width: 100%;
+    overflow: auto;
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+
+    background: color( background-pre );
+
+    font-family: monospace;
+    font-size: 0.9375em;
+    line-height: 1;
+  }
+
+  code,
+  kbd,
+  tt,
+  var {
+    font-family: monospace;
+    font-size: 0.9375em;
+  }
+
+  abbr,
+  acronym {
+    border-bottom: 1px dotted color( border-abbr );
+    cursor: help;
+  }
+
+  mark,
+  ins {
+    background: color( background-ins );
+    text-decoration: none;
+  }
+
+  big {
+    font-size: 125%;
+  }
+
+
+  //font tests:
+
+  .font-kanji {
+
+    @include font-kanji;
+
+    @include media( $tablet-break ) {
+
+      // @include font-kanji;
+
+      font-size: 20px; // @TODO account for mobile
+      position: relative;
+      top: 3px;
+
+    }
+
+  }
+
+
+  .font-noto {
+
+    @include font-noto;
+
+  }
+
+  .font-robotolight {
+
+    @include font-subheadline;
+
+  }
+
+  table {
+
+    tr {
+
+      border-bottom: 1px solid color( black );
+
+      th {
+
+        @include media( max-width 1023px ) {
+
+          @include visuallyhidden;
+
+        }
+
+      }
+
+    }
+
+    td {
+
+      vertical-align: top;
+
+      display: block;
+
+      &>img {
+
+        margin-bottom: 18px;
+
+      }
+
+      &:first-child {
+
+        padding-top: 21px;
+
+      }
+
+      @include media( $landscape-break ) {
+
+        display: table-cell;
+        padding-right: 36px;
+        padding-top: 21px;
+
+      }
+
+      &>.button:first-child {
+
+        margin-top: 5px;
+
+      }
+
+      ul, ol {
+
+        margin-top: 27px;
+
+        @include media( $landscape-break ) {
+
+          &:first-child {
+
+            margin-top: 0;
+
+          }
+
+        }
+
+      }
+
+      &:last-of-type {
+
+        padding-right: 0;
+
+      }
+
+    }
+
+  }
+
+  .alignright { // fixes align right as first object on mobile.
+
+    &> + .has-the-blue-bar:before {
+
+      display: none;
+
+
+      @include media( $tablet-break ) {
+
+        display: block;
+
+      }
+
+    }
+
+  }
+
+
+  #vm-truetour-iframe {
+
+    height: 200px;
+
+    @include media( $tablet-break ) {
+
+      height: 600px;
+
+    }
+
+  }
+
+}

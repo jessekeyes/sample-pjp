@@ -1,0 +1,762 @@
+// Featured Meida module and maine page/post titles
+
+
+// tiles and sur title by default
+
+.entry-header {
+
+  @include center-block;
+  max-width: $max-width;
+
+  @media( min-width: 600px ) and ( max-width: 1271px ) {
+
+    padding-left: 18px;
+    padding-right: 18px;
+
+  }
+
+  .archive-title & {
+
+    @include padding( max );
+
+    &>.inner {
+
+      padding: 0 !important;
+
+    }
+
+  }
+
+  .featured-media & {
+
+    &:not( .titles ) {
+
+      @include padding( full );
+
+    }
+
+  }
+
+
+  &.titles {
+
+    margin-bottom: 10px;
+
+    .wrapper-posts & {
+
+      margin-bottom: 0;
+
+    }
+
+  }
+
+  margin-bottom: 36px;
+
+  @include media( $tablet-break ) {
+
+    margin-bottom: 75px;
+
+    .featured-media & {
+
+      max-width: 100%;
+      margin-bottom: 50px;
+
+    }
+
+    .archive & {
+
+      margin-bottom: 50px;
+
+    }
+
+  }
+
+  .entry-title {
+
+    @include font-subheadline;
+    color: color( entry-title );
+
+    font-size: 50px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+
+    margin-bottom: 5px;
+
+    .type-page &, .archive-title & {
+
+      margin-bottom: 0;
+
+    }
+
+    .japanese-translated & {
+
+      @include font-japanese-sans;
+
+    }
+
+    .chinese-translated & {
+
+      @include font-chinese-sans;
+
+    }
+
+
+
+    .wrapper-posts & {
+
+      font-size: 30px;
+      line-height: 36px;
+
+      a {
+
+        text-decoration: none;
+
+        color: color( navy );
+
+        .no-touchevents & {
+
+          &:hover {
+
+            color: color( link-nav );
+
+          }
+
+        }
+
+      }
+
+      @include media( $landscape-break ) {
+
+        font-size: 36px;
+        line-height: 42px;
+
+      }
+
+    }
+
+    @include media( $tablet-break ) {
+
+      width: 83%;
+
+      font-size: 70px;
+      line-height: 80px;
+
+      margin-bottom: 10px;
+
+      .type-page:not(.item-search) &, .archive-title & {
+
+        @include font-headline;
+        font-size: 80px;
+        margin-bottom: 0;
+
+        .japanese-translated & {
+
+          @include font-japanese-sans;
+
+        }
+
+        .chinese-translated & {
+
+          @include font-chinese-sans;
+
+        }
+
+      }
+
+      .japanese-translated & {
+
+        @include font-japanese-sans;
+
+      }
+
+      .chinese-translated & {
+
+        @include font-chinese-sans;
+
+      }
+
+    }
+
+    @include media( $max-break ) {
+
+      .type-page:not(.item-search) &, .archive-title &{
+
+        @include font-headline;
+
+        .japanese-translated & {
+
+          @include font-japanese-sans;
+
+        }
+
+        .chinese-translated & {
+
+          @include font-chinese-sans;
+
+        }
+
+      }
+
+    }
+
+    @include media( $large-break ) {
+
+      .type-page:not(.item-search) &, .archive-title & {
+
+        @include font-headline;
+        font-size: 90px;
+
+      }
+
+    }
+
+  }
+
+  .sur-title {
+
+    @include font-allcaps;
+
+    font-size: 14px;
+    line-height: 16px;
+
+    letter-spacing: 0.05em;
+
+    color: color( meta-title );
+
+    margin-bottom: 5px;
+    margin-top: 9px;
+
+    .featured-media & {
+
+      color: color( white );
+
+    }
+
+    @include media( $tablet-break ) {
+
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 0px;
+
+    }
+
+    .single & {
+
+      margin-bottom: 10px;
+
+    }
+
+    .chinese-translated & {
+
+      @include font-chinese-sans;
+
+    }
+
+    .japanese-translated & {
+
+      @include font-japanese-sans;
+
+    }
+
+
+
+    .type-page &, .archive-title & {
+
+      font-size: 16px;
+      color: color( entry-title );
+      letter-spacing: 0.08em;
+
+      @include media( $tablet-break ) {
+
+        font-size: 20px;
+
+      }
+
+      .item-overlay & {
+
+        color: color( white );
+
+      }
+
+    }
+
+    .category {
+
+      display: inline-block;
+      padding: 4px 0 5px;
+
+      text-decoration: none;
+      color: color( meta-title );
+
+      // margin-right: 10px;
+
+      .item-overlay & {
+
+        color: color( white );
+
+      }
+
+      &:after {
+
+        content: ' / ';
+
+      }
+
+      &:last-child {
+
+        &:after {
+
+          display: none;
+
+        }
+
+      }
+
+      // @include media( $tablet-break ) {
+      //
+      //   margin-right: 20px;
+      //
+      // }
+
+      &:last-of-type {
+
+        margin-right: 0;
+
+      }
+
+
+         &.member-only {
+
+          background: color( matcha-green );
+          color: color( white );
+          padding-left: 5px;
+          padding-right: 5px;
+
+          margin-right: 5px;
+
+
+            &:after {
+
+              display: none;
+
+            }
+
+
+
+          @include media( $tablet-break ) {
+
+            padding-left: 10px;
+            padding-right: 10px;
+
+          }
+
+        }
+
+    }
+
+    .type-page &, .archive-title & {
+
+      margin-bottom: 10px;
+
+      @include media( $landscape-break ) {
+
+        margin-bottom: 15px;
+
+      }
+
+    }
+
+  }
+
+  .featured-image,
+  .featured-youtube {
+
+    position: relative;
+
+    margin-bottom: -50px;
+
+    .poster.mobile {
+
+      @include media( $tablet-break ) {
+
+        .no-touchevents & {
+
+          display: none;
+
+        }
+
+      }
+
+    }
+
+    #loop {
+
+      display: none;
+
+      width: 100%;
+
+      @include media( $tablet-break ) {
+
+        .no-touchevents & {
+
+          display: block;
+
+        }
+
+      }
+
+    }
+
+    &>.kanji {
+
+      position: absolute;
+
+      top: 36px;
+      left: 27px;
+      z-index: 10;
+
+      @include font-kanji;
+
+      color: color( white );
+
+      font-size: 60px;
+
+      @include media( $tablet-break ) {
+
+        font-size: 100px;
+        left: 27px;
+
+      }
+
+      @include media( $landscape-break ) {
+
+        display: none;
+
+      }
+
+    }
+
+    @include media( $tablet-break ) {
+
+      margin-bottom: 0;
+
+    }
+
+
+    .image-gradient {
+
+      @include image-gradient;
+
+    }
+
+
+    img {
+
+      width: 100%;
+
+
+    }
+
+    &>.titles {
+
+      @include center-block;
+      max-width: $max-width;
+      margin-bottom: 90px;
+
+    }
+
+    .video {
+
+      @extend %video;
+
+      padding-bottom: 56.25%;
+
+    }
+
+    .caption {
+
+      display: none; // replace by magical double caption
+
+      max-width: $copy-max;
+
+      @include font-italic;
+      font-size: 15px;
+      line-height: 1.5;
+
+      .font-noto {
+
+        @include font-noto;
+
+      }
+
+      .font-kanji {
+
+        @include font-kanji;
+
+      }
+
+      @include media( $tablet-break ) {
+
+        display: block;
+
+        position: relative;
+        bottom: auto;
+        left: auto;
+
+        margin-top: 0;
+        margin-right: 0;
+
+        margin-top: -27px;
+
+        margin-right: -5px;
+
+        color: color( white );
+
+      }
+
+      @include media( $landscape-break ) {
+
+        margin-top: 55px;
+
+      }
+
+
+      a {
+
+        color: color( white);
+
+        &:hover {
+
+          color: color( link-nav );
+
+        }
+
+      }
+
+      &:before {
+
+        display: none;
+
+        @include media( $tablet-break ) {
+
+          display: block;
+
+        }
+
+        content: '';
+        position: absolute;
+        top: -15px;
+        width: 170px;
+        height: 5px;
+        background: color( white );
+
+      }
+
+    }
+
+  }
+
+  .link-back {
+
+    display: block;
+    padding-top: 5px;
+    margin-bottom: 50px;
+
+    @include font-allcaps;
+    font-size: 14px;
+    line-height: 1.2;
+    color: color( navy );
+
+    border-top: 3px solid color( navy );
+
+    &:hover {
+
+      color: color( link-nav );
+      text-decoration: none;
+
+    }
+
+    @include media( $tablet-break ) {
+
+      padding-top: 10px;
+      margin-bottom: 80px;
+
+      font-size: 16px;
+
+    }
+
+  }
+
+  .inner {
+
+    // padding-left: 18px;
+    // padding-right: 18px;
+
+    @include padding( header );
+
+    @include center-block;
+    max-width: $max-width;
+
+    &.inner-post {
+
+      @include padding( max_row );
+
+    }
+
+    .sur-title {
+
+      margin-top: 0;
+
+    }
+
+    @include media( $tablet-break ) {
+
+      .featured-image & {
+        // only for media overlays
+        padding-left: 0;
+        padding-right: 0;
+
+      }
+
+    }
+
+  }
+
+
+
+  .home & {
+
+    .entry-content {
+
+      margin-left: 0;
+      margin-top: 15px;
+      padding-left: 0;
+
+      @include media( $landscape-break ) {
+
+        margin-top: 30px;
+        margin-bottom: 60px;
+
+      }
+
+      p,
+      h1,
+      h2
+      h3,
+      h4,
+      h5,
+      h6 {
+
+        color: color( white );
+
+        font-size: 17px;
+        line-height: 24px;
+
+        margin-bottom: 18px;
+
+        @include media( $landscape-break ) {
+
+          font-size: 20px;
+          line-height: 30px;
+
+          margin-bottom: 36px;
+
+        }
+
+      }
+
+      blockquote,
+      ul,
+      ol,
+      table {
+
+        display: none;
+
+      }
+
+      .arrow {
+
+        border: none;
+
+        display: block;
+        background-image: url('#{$svg}/arrow-home.svg');
+        background-repeat: no-repeat;
+
+        width: 60px;
+        height: 38px;
+
+        @include media( $landscape-break ) {
+
+          width: 78px;
+          height: 48px;
+
+          margin-left: 0;
+          margin-top: -10px;
+
+        }
+
+        &.has-kanji {
+
+          @include media( $landscape-break ) {
+
+            margin-left: 227px; // sigh
+
+          }
+
+        }
+
+      }
+
+      &>.kanji {
+
+        display: none;
+
+        color: color( white );
+
+        @include media( $landscape-break ) {
+
+          display: block;
+
+          font-size: 100px;
+
+          width: 272px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .caption.caption-mobile {
+
+    position: relative;
+    @include font-italic;
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: color( navy );
+
+    margin-top: 50px;
+    padding-left: 21px; // +9 from image
+    padding-right: 21px; // +9 from image
+    padding-top: 10px;
+
+    cite {
+
+      color: color( gray-light );
+
+    }
+
+    @include media( $tablet-break ) {
+
+      display: none;
+
+    }
+
+  }
+
+
+
+}

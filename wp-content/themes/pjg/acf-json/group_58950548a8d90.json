@@ -1,0 +1,43 @@
+{
+    "key": "group_58950548a8d90",
+    "title": "Recurrence Description",
+    "fields": [
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "e.g., every Wednesday and Friday... each day at 2pm, etc.",
+            "prepend": "",
+            "append": "",
+            "key": "field_589505743dff0",
+            "label": "Recurrence Descriptive Text",
+            "name": "recurrence_descriptive_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event-recurring"
+            }
+        ]
+    ],
+    "menu_order": -100,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1486161591
+}

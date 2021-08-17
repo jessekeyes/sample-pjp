@@ -1,0 +1,207 @@
+/**
+ * Layout
+ */
+
+@import "header";
+@import "navigation";
+@import "posts-pages";
+@import "widgets";
+@import "footer";
+
+
+.site-header {
+
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+.site-content {
+
+  padding-top: 95px;
+
+  transition: padding 300ms;
+
+  .alert & {
+
+    padding-top: calc( 306px + 95px ); // with alert
+
+  }
+
+  .page &,
+  .archive &,
+  .blog & {
+
+    padding-top: 121px;
+
+  }
+
+  .page.alert &,
+  .archive.alert &,
+  .blog.alert & {
+
+    padding-top: calc( 306px + 121px ); // with alert
+
+  }
+
+  @include center-block;
+
+  @include media( $tablet-break ) {
+
+    .page.alert &,
+    .archive.alert &,
+    .blog.alert & {
+
+      padding-top: calc( 175px + 121px ); // with alert
+
+    }
+
+  }
+
+  @include media( $landscape-break ) {
+
+    padding-top: 212px;
+
+    .alert & {
+
+      padding-top: calc( 130px + 212px ); // with alert
+
+    }
+
+    .page &,
+    .archive &,
+    .blog & {
+
+      padding-top: 190px;
+
+    }
+
+    .page.alert &,
+    .archive.alert &,
+    .blog.alert & {
+
+      padding-top: calc( 130px + 190px );
+
+    }
+
+
+    .media-top:not( .archive ) &,
+    .single & {
+
+      padding-top: 120px;
+
+    }
+
+    .alert.media-top:not( .archive ) &,
+    .single.alert & {
+
+      padding-top: calc( 130px + 120px );
+
+    }
+
+
+  }
+
+
+}
+
+
+.featured-youtube {
+
+  max-width: $max-width;
+  @include center-block;
+
+}
+
+
+
+.site-footer {
+
+  max-width: $max-width;
+  @include center-block;
+
+}
+
+.lower-modules {
+
+  text-align: center;
+
+  margin-bottom: 54px;
+
+  .item {
+
+    margin-bottom: 54px;
+
+    &.instagram-wrapper {
+
+      margin-bottom: calc( 54px - 18px );;
+
+    }
+
+  }
+
+  @include media( $tablet-break ) {
+
+    margin-bottom: 40px;
+
+    .item {
+
+      margin-bottom: 40px;
+
+      &.instagram-wrapper {
+
+        margin-bottom: calc( 40px - 18px );
+
+      }
+
+    }
+
+  }
+
+  @include media( $max-break ) {
+
+    margin-bottom: 90px;
+
+    .item {
+
+      margin-bottom: 90px;
+
+      &.instagram-wrapper {
+
+        margin-bottom: calc( 90px - 18px );;
+
+      }
+
+    }
+
+  }
+
+
+}
+
+
+
+body.overlay-nav {
+
+  overflow: hidden;
+
+}
+
+#wpadminbar {
+
+  position: fixed;
+
+}
+
+//
+// // mailchimp footer email thingie
+//
+// #mce-responses,
+// div[for=mce-EMAIL].mce_inline_error {
+//
+//   // display: none !important;
+//
+//   padding-left: 0;
+//
+// }

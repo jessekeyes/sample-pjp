@@ -1,0 +1,314 @@
+
+.global-alert {
+
+  position: relative;
+  z-index: 12;
+
+  background-color: color( red );
+
+  height: 0;
+
+  display: none;
+  overflow: hidden;
+
+  transition: height 300ms;
+
+  &.open {
+
+      height: 306px;
+
+      transition: height 300ms;
+
+      @include media( $tablet-break ) {
+
+        height: 175px;
+
+      }
+
+      @include media( $landscape-break ) {
+
+        height: 130px;
+
+      }
+
+  }
+
+  .wrapper {
+
+    padding: 36px 18px;
+
+  }
+
+  .global-alert-close {
+
+    position: absolute;
+    top: 5px;
+    right: 9px;
+
+    @include font-allcaps;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+
+    color: color( white );
+
+    cursor: pointer;
+
+    @include media( $tablet-break ) {
+
+      right: 18px;
+
+    }
+
+    @include media( $max-break-plus ) {
+
+      font-size: 12px;
+
+      right: 36px;
+
+    }
+
+  }
+
+  .global-alert-row {
+
+    @include center-block;
+    max-width: $max-width;
+
+    @include media( $tablet-break ) {
+
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    .global-alert-title {
+
+
+      margin-bottom: 10px;
+
+      @include media( $tablet-break ) {
+
+        width: 25%;
+
+        margin-right: 27px;
+
+        margin-bottom: 0;
+
+      }
+
+      .title {
+
+        color: color( white );
+
+        @include font-subheadline;
+
+        font-size: 25px;
+        line-height: 1.3;
+
+      }
+
+    }
+
+    .global-alert-copy {
+
+      overflow: hidden;
+
+      @include media( $tablet-break ) {
+
+        width: 75%;
+
+      }
+
+      .global-alert-content {
+
+        color: color( white );
+
+        height: 200px;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE 10+ */
+
+        &::-webkit-scrollbar { /* WebKit */
+          width: 0;
+          height: 0;
+
+        }
+
+        @include media( $tablet-break ) {
+
+          height: 100px;
+
+        }
+
+        @include media( $landscape-break ) {
+
+          height: 80px;
+
+        }
+
+        p {
+
+          @include font-regular;
+          font-size: 17px;
+          line-height: 34px;
+
+          margin-bottom: 18px;
+
+          &:last-of-type {
+
+            margin-bottom: 0;
+
+          }
+
+          @include media( $landscape-break ) {
+
+            font-size: 18px;
+            line-height: 30px;
+
+          }
+
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+
+          @include font-subheadline;
+          font-size: 24px;
+          line-height: 1.3;
+
+          margin-bottom: 5px;
+
+          @include media( $landscape-break ) {
+
+            font-size: 28px;
+
+          }
+
+        }
+
+      }
+
+      .global-alert-cta {
+
+        @include font-subheadline;
+        font-size: 20px;
+        line-height: 1.3;
+
+        margin-bottom: 18px;
+
+        a {
+
+          color: color( white );
+
+          text-decoration: none;
+
+          // &:hover {
+          //
+          //   color: color( link-nav );
+          //
+          // }
+
+        }
+
+        @include media( $landscape-break ) {
+
+          font-size: 24px;
+
+        }
+
+      }
+
+      .arrow {
+
+        display: block;
+        background-image: url('#{$svg}/arrow-home.svg');
+        background-repeat: no-repeat;
+
+        width: 51px;
+        height: 32px;
+
+
+
+        @include media( $landscape-break ) {
+
+          width: 51px;
+          height: 32px;
+
+
+        }
+
+      }
+
+
+    }
+
+
+  }
+
+
+
+  &.color-green {
+
+    background-color: color( pullquote );
+
+    .global-alert-close {
+
+      color: color( navy );
+
+
+    }
+
+    .global-alert-title {
+
+      .title {
+
+        font-size: 28px;
+        line-height: 1.3;
+
+        color: color( navy );
+
+      }
+
+    }
+
+    .global-alert-copy {
+
+      color: color( navy );
+
+      p, h1, h2, h3, h4, h5, h6 {
+
+        color: color( navy );
+
+      }
+
+      .global-alert-cta {
+
+        a {
+
+          color: color( navy );
+
+        }
+
+      }
+
+
+
+      .arrow {
+
+        background-image: url('#{$svg}/arrow-navy.svg');
+
+
+      }
+
+    }
+
+  }
+
+}
+
+@-moz-document url-prefix() {
+    .global-alert-content {
+
+        position: relative;
+        right: -10px; // hide scrollbar on FF
+
+    }
+}

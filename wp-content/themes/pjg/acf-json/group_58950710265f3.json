@@ -1,0 +1,142 @@
+{
+    "key": "group_58950710265f3",
+    "title": "Event Extras",
+    "fields": [
+        {
+            "key": "field_5a68f7f96f22b",
+            "label": "Date Display",
+            "name": "date_display",
+            "type": "text",
+            "instructions": "Text here will override how the dates of the event are displayed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_589507e92fbe4",
+            "label": "TBD",
+            "name": "tbd",
+            "type": "true_false",
+            "instructions": "Will override date display and display instead: \"Date to be Announced\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_58b097b788f86",
+            "label": "Calendar Button",
+            "name": "show_calendar",
+            "type": "true_false",
+            "instructions": "Display add to calendar icon",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5895082a2fbe5",
+            "label": "Price Box Title",
+            "name": "price_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_589508a12fbe6",
+            "label": "Price Copy",
+            "name": "price_copy",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5895290018bae",
+            "label": "Location URL",
+            "name": "location_url",
+            "type": "url",
+            "instructions": "If used, the location placename will link to this URL in a new window\/tab",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event-recurring"
+            }
+        ]
+    ],
+    "menu_order": -50,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1516857548
+}

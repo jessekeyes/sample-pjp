@@ -1,0 +1,94 @@
+/**
+ * Vars
+ */
+
+/* colors */
+$colors: (
+
+
+  // design colors
+  rule-color: #222222,
+  gray-dark: #222222,
+  black: #222222,
+  copy: #222222,
+  white: #fff,
+
+  meta-title: #838383,
+  gray-light: #838383,
+
+  background-nav: #424143,
+  gray-medium: #424143,
+
+  background-widget: #253746,
+  navy: #253746,
+  nav-title: #253746,
+  caption: #253746,
+  entry-title: #253746,
+
+  background-cta: #EBD8BF,
+  tan: #EBD8BF,
+
+  alert: #E44126,
+  red: #E44126,
+
+  link-nav: #B5BD00,
+  pullquote: #B5BD00,
+  matcha-green: #B5BD00,
+
+  green: #828900,
+  success: #828900,
+
+  // default colors
+
+  background-body: #fff,
+  background-screen: #f1f1f1,
+  background-hr: #ccc,
+  background-button: #e6e6e6,
+  background-pre: #eee,
+  background-ins: #fff9c0,
+
+  text-screen: #21759b,
+  text-input: #666,
+  text-input-focus: #111,
+  link: #222,
+  link-visited: #222,
+  link-hover: #B5BD00,
+  text-main: #222,
+
+  border-button: #ccc #ccc #bbb,
+  border-button-hover: #ccc #bbb #aaa,
+  border-button-focus: #aaa #bbb #bbb,
+  border-input: #ccc,
+  border-abbr: #666
+
+
+
+
+
+
+
+);
+
+/* frameworks */
+$em-base: 18px;
+$base-font-size: $em-base;
+$base-line-height: 30px;
+
+/* layout */
+
+$article-max: $max-width;
+$copy-max: 788px;
+
+/* main styles * /
+
+
+
+
+/* font-face init */
+$gotham: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+$ballantines: 'Ballantines Serial',script;
+
+
+/* paths */
+$img: '../img';
+$svg: '../svg';

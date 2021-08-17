@@ -1,0 +1,337 @@
+.sharing {
+
+  display: none;
+
+  position: relative;
+
+  @include media( $tablet-break ) {
+
+    display: block;
+    margin-left: 18px;
+    margin-right: 18px;
+
+  }
+
+  @include media( $landscape-break ) {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    .type-post.event-sidebar:not( .item-search ) &,
+    .type-event.event-sidebar-share:not( .item-search ) & {
+
+      margin-top: 20px;
+
+    }
+
+  }
+
+  .sd-sharing {
+
+    width: 170px;
+    @include center-block;
+
+    @include clearfix;
+
+    .sd-content {
+
+      float: left;
+      width: 115px;
+
+      &>ul {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li {
+
+          padding: 0 !important;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .sharedaddy {
+
+    h3.sd-title {
+
+      @include font-allcaps;
+      text-align: right;
+      float: left;
+      width: 40px;
+      margin-right: 15px;
+      color: color( navy );
+
+      font-weight: normal;
+
+      &:before {
+
+        display: none;
+
+      }
+
+    }
+
+  }
+
+  &.sharing-event {
+
+    border-top: 3px solid color( navy );
+
+    padding-top: 9px;
+
+    @include media( $landscape-break ) {
+
+      border-top: 5px solid color( navy );
+
+    }
+
+  }
+
+  .sd-content ul li {
+
+    margin: 0;
+
+  }
+
+  .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button {
+
+    background: none;
+    padding: 0;
+    margin: 0 5px 0 0;
+    display: block;
+
+    width: 26px;
+    height: 26px;
+
+    &:before {
+
+      content: '';
+      background-image: url( '#{$svg}/facebook.svg' );
+      background-repeat: no-repeat;
+
+      width: 26px;
+      height: 26px;
+
+    }
+
+    &:hover {
+
+      &:before {
+
+        background-image: url( '#{$svg}/facebook-hover.svg' );
+        opacity: 1;
+
+      }
+
+    }
+
+  }
+
+  .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button {
+
+    background: none;
+    padding: 0;
+    margin: 6px 5px 0 0;
+    display: block;
+
+    width: 26px;
+    height: 26px;
+
+    &:before {
+
+      content: '';
+      background-image: url( '#{$svg}/twitter.svg' );
+      background-repeat: no-repeat;
+
+      width: 26px;
+      height: 26px;
+
+    }
+
+    &:hover {
+
+      &:before {
+
+        background-image: url( '#{$svg}/twitter-hover.svg' );
+        opacity: 1;
+
+      }
+
+    }
+
+  }
+
+  .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button {
+
+    background: none;
+    padding: 0;
+    margin: 5px 0 0;
+    display: block;
+
+    width: 26px;
+    height: 26px;
+
+    &:before {
+
+      content: '';
+      background-image: url( '#{$svg}/email.svg' );
+      background-repeat: no-repeat;
+
+      width: 26px;
+      height: 26px;
+
+    }
+
+    &:hover {
+
+      &:before {
+
+        background-image: url( '#{$svg}/email-hover.svg' );
+        opacity: 1;
+
+      }
+
+    }
+
+  }
+
+}
+
+#sharing_email {
+
+  top: 45px !important;
+  left: 31.5% !important;
+  z-index: 10 !important;
+  width: 335px;
+
+  .g-recaptcha {
+
+    margin-bottom: 18px;
+
+    iframe {
+
+      height: 78px; // otherwise overlaps buttons
+
+    }
+
+  }
+
+  @include media( $landscape-break ) {
+
+    left: 0 !important;
+
+    .single-post { // @TODO check if needed
+
+      width: 170px;
+
+    }
+
+  }
+
+  label {
+
+    @include font-allcaps;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+
+    //overrides
+    font-weight: normal !important;
+    color: color( navy ) !important;
+
+    margin-bottom: 10px;
+
+  }
+
+  input[type="email"],
+  input[type="text"] {
+
+    @include form-input;
+
+    margin-bottom: 18px;
+
+  }
+
+  .sharing_send {
+
+    @include button;
+
+    box-shadow: none;
+
+    color: color( navy ) !important;
+
+    &:hover {
+
+      color: color( white ) !important;
+
+    }
+
+  }
+
+  .sharing_cancel {
+
+    color: color( navy );
+    @include font-allcaps;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+
+    &:hover {
+
+      color: color( link-nav );
+
+    }
+
+  }
+
+  .response {
+
+    @include font-regular;
+
+    div:not( .respone-close ) {
+
+      margin-bottom: 10px;
+
+    }
+
+    .sharing_cancel {
+
+      padding-left: 0;
+
+    }
+
+  }
+
+  .errors {
+
+    background: color( red );
+
+    @include font-regular;
+    font-size: 16px;
+    line-height: 1.2;
+
+  }
+
+}
+
+.sharedaddy {
+
+  .global-alert & {
+
+    display: none;
+
+  }
+
+}
+
+span.share-count {
+
+  display: none !important;
+
+}

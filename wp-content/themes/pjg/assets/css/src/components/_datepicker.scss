@@ -1,0 +1,131 @@
+
+
+// date picker jquery UI overrides
+
+
+.ui-datepicker {
+
+  th {
+
+    font-weight: normal;
+
+    @include font-allcaps;
+    color: color( navy );
+
+  }
+
+  .ui-widget-header {
+
+    background: color( navy );
+
+
+  }
+
+  .ui-state-default {
+
+    text-align: center;
+
+    @include font-subheadline;
+    color: color( navy );
+
+    background: color( white );
+    border-color: color( navy );
+
+    &.ui-state-highlight { // today
+
+      background: color( gray-light );
+      border-color: color( gray-medium );
+      color: color( white );
+
+    }
+
+  }
+
+  .ui-state-disabled {
+
+    .ui-state-disabled {
+
+      background: color( gray-light );
+      border-color: color( gray-medium );
+      color: color( gray-medium );
+
+
+    }
+
+  }
+
+  td.ui-datepicker-current-day {
+
+    .ui-state-default.ui-state-active {
+
+      background: color( navy );
+      color: color( white );
+
+    }
+
+  }
+
+  .ui-datepicker-title {
+
+    @include font-allcaps;
+    color: color( white );
+
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+
+  }
+
+  .ui-datepicker-next,
+  .ui-datepicker-prev {
+
+    outline: none;
+    background-color: color( white );
+    background-image: url( '#{$svg}/arrow-gallery-fm.svg' );
+    // margin-bottom: 12px;
+    -webkit-appearance: none;
+    border: none;
+    background-size: 15px auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    top: 3px;
+    right: 2px;
+
+    text-indent: -9999px;
+    overflow: hidden;
+
+
+    cursor: pointer;
+
+    &:hover {
+
+      background-image: url( '#{$svg}/arrow-gallery.svg' );
+      background-color: color( link-nav );
+
+    }
+
+    span {
+
+      display: none;
+
+    }
+
+  }
+  .ui-datepicker-prev {
+
+    transform: scaleX( -1 ); // flip it
+
+    &:hover {
+
+      right: auto;
+      left: 2px;
+
+    }
+
+  }
+
+}

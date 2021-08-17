@@ -1,0 +1,23 @@
+/**
+ * Typography
+ */
+
+html { font-size: 100%; }
+
+body,
+button,
+input,
+select,
+textarea {
+  color: color( text-main );
+
+  // @include font-regular();
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+body {
+
+  @include antialias;
+
+}

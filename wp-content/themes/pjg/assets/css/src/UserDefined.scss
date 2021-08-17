@@ -1,0 +1,1704 @@
+/**
+* Portland Japanese Garden, eTAM user css
+* stored here for ease of production, but live file is copied on eTAM servers
+* http://japanesegarden.com
+*
+* Copyright (c) 2018 Jesse Keyes
+*/
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>. snippets in cms >>>>>>>>>>>>>>>>>>>>>>
+
+/// Custom Header HTML
+
+<html><body>
+
+<div class="container header-custom">
+
+  <div class="site-branding">
+
+    <h1 class="site-title"><a href="https://japanesegarden.org" rel="Store home">Portland Japanese Garden Gift Shop</a></h1>
+
+  </div><!-- .site-branding -->
+
+  <div class="sub-title">
+
+    <h2 class="site-sub-title"><a href="/" rel="Store home">Gift Shop</a></h2>
+
+  </div>
+
+</div>
+
+</body></html>
+
+*/
+
+
+// fonts
+/**
+ * Font Face
+ */
+
+ @font-face {
+ 	font-family: 'AddingtonCF-DemiBold';
+ 	src: url('/UserDefinedImages/addington-cf-demi-bold.eot');
+ 	src: url('/UserDefinedImages/addington-cf-demi-bold.eot?#iefix') format('embedded-opentype'),
+              url('/UserDefinedImages/addington-cf-demi-bold.woff2') format('woff2'),
+ 	     url('/UserDefinedImages/addington-cf-demi-bold.woff') format('woff'),
+ 	     url('/UserDefinedImages/addington-cf-demi-bold.ttf') format('truetype'),
+ 	     url('/UserDefinedImages/addington-cf-demi-bold.svg#youworkforthem') format('svg');
+ 	font-weight: normal;
+ 	font-style: normal;
+ }
+
+ @font-face {
+ 	font-family: 'AddingtonCF-Light';
+ 	src: url('/UserDefinedImages/addington-cf-light.eot');
+ 	src: url('/UserDefinedImages/addington-cf-light.eot?#iefix') format('embedded-opentype'),
+              url('/UserDefinedImages/addington-cf-light.woff2') format('woff2'),
+ 	     url('/UserDefinedImages/addington-cf-light.woff') format('woff'),
+ 	     url('/UserDefinedImages/addington-cf-light.ttf') format('truetype'),
+ 	     url('/UserDefinedImages/addington-cf-light.svg#youworkforthem') format('svg');
+ 	font-weight: normal;
+ 	font-style: normal;
+ }
+
+
+ @font-face {
+ 	font-family: 'AddingtonCF-LightItalic';
+ 	src: url('/UserDefinedImages/addington-cf-light-italic.eot');
+ 	src: url('/UserDefinedImages/addington-cf-light-italic.eot?#iefix') format('embedded-opentype'),
+              url('/UserDefinedImages/addington-cf-light-italic.woff2') format('woff2'),
+ 	     url('/UserDefinedImages/addington-cf-light-italic.woff') format('woff'),
+ 	     url('/UserDefinedImages/addington-cf-light-italic.ttf') format('truetype'),
+ 	     url('/UserDefinedImages/addington-cf-light-italic.svg#youworkforthem') format('svg');
+ 	font-weight: normal;
+ 	font-style: normal;
+ }
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,400,500,500i');
+
+
+@import "global/grid-settings";
+@import "global/mixins";
+@import "global/vars";
+
+// google font mixins re-declared
+@mixin font-headline {
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-transform: none;
+
+}
+
+@mixin font-headline-italic {
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  text-transform: none;
+
+}
+
+@mixin font-subheadline {
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-transform: none;
+
+}
+
+@mixin font-subheadline-italic {
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  text-transform: none;
+
+}
+
+@mixin font-bug {
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: none;
+
+}
+
+@mixin font-bug-italic {
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: none;
+
+}
+
+
+
+@import "base/copy";
+@import "base/forms";
+@import "base/typography";
+
+
+// forms
+
+input {
+
+  &[type="text"],
+  &[type="date"],
+  &[type="email"],
+  &[type="tel"],
+  &[type="number"],
+  &[type="password"] {
+
+    @include form-input;
+
+    border-radius: 0 !important;
+
+  }
+
+}
+
+label {
+
+  @include form-label;
+  font-size: 95% !important;
+
+}
+
+select {
+
+  @include form-select;
+
+  background-image: url( '/UserDefinedImages/arrow-dropdown.svg');
+
+  &.form-control {
+
+    width: 50%;
+
+  }
+
+}
+
+.form-group { //
+
+  max-width: 600px;
+  @include center-block;
+
+}
+
+
+// header styles
+
+// header desktop search:
+
+#ctl00_divSearch {
+
+  @include media( $tablet-break ) {
+
+    display: flex !important;
+    flex-flow: row;
+
+  }
+
+}
+
+.header-custom {
+
+    display: flex;
+    justify-content: flex-start;
+
+    border-bottom: 3px solid color( navy );
+    padding: 0 15px 15px !important;
+    margin: 15px 0 0;
+
+    @include media( $tablet-break ) {
+
+      border-bottom: none;
+      padding: 0 10px !important;
+      margin: 0;
+
+    }
+
+    .site-branding {
+
+      // position: absolute;
+      // top: 36px;
+
+      width: auto;
+      height: 60px;
+
+      background-image: url( '/UserDefinedImages/pjg.svg' );
+      background-repeat: no-repeat;
+
+      @include media( $tablet-break ) {
+
+        margin-bottom: 18px;
+
+      }
+
+      &:hover {
+
+        background-image: url( '/UserDefinedImages/pjg-hover.svg' );
+
+      }
+
+      .site-title {
+
+        text-indent: -1000px;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+
+        a {
+
+          display: block;
+          height: 100%;
+
+          border-bottom: none;
+          text-decoration: none;
+
+        }
+
+      }
+
+      @include media( $landscape-break ) {
+
+        position: static;
+
+        width: 200px;
+        height: 83px;
+
+      }
+
+    }
+
+
+    .sub-title {
+
+      align-self: center;
+      margin-left: 25px;
+      padding: 15px 20px 7px 20px;
+
+      border-left: 1px solid color( navy );
+
+      a {
+
+        border-bottom: none;
+        text-decoration: none;
+
+      }
+
+    }
+
+
+}
+
+// Nav header styles
+
+.navbar {
+
+  a.nav-item,
+  a.nav-link {
+
+    color: color( navy );
+    border-bottom: none;
+
+    &:hover {
+
+      color: color( link-nav );
+
+    }
+
+  }
+
+  &#ctl00_AcctBar {
+
+    a {
+
+      text-transform: uppercase;
+
+    }
+
+  }
+
+  &#ctl00_navigationClient {
+
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-bottom: 3px solid color( navy );
+    border-top: 3px solid color( navy );
+
+    .navbar-collapse > div {
+
+      width: 100%;
+
+    }
+
+    ul {
+
+      display: flex;
+      justify-content: space-between;
+
+      margin: 0;
+      padding: 0;
+
+      & > li {
+
+        @include font-allcaps;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: normal;
+
+        margin: 10px 0 !important;
+
+        &:before {
+
+          display: none;
+          position: static;
+
+        }
+
+        a {
+
+          border-bottom: none;
+
+          &:hover {
+
+            text-decoration: none;
+            border-bottom: none;
+
+          }
+
+          // &:after {
+          //
+          //   display: none;
+          //
+          // }
+
+        }
+
+        @include media( $landscape-break ) {
+
+          font-size: 20px;
+          letter-spacing: .08em;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// DROP DOWN MENU OVERRIDES
+.dropdown-menu {
+
+  background: color( navy );
+  color: color( white );
+
+  width: 250px;
+
+  .dropdown-item {
+
+    padding: 7px 10px !important;
+
+    color: color( white );
+
+    @include font-regular;
+    text-transform: none;
+    letter-spacing: normal;
+
+    font-size: 20px;
+    line-height: 1.2;
+
+    text-align: left;
+
+    background: none;
+
+    white-space: normal;
+
+    &:hover {
+
+      color: color( link-nav );
+
+    }
+
+    &:last-of-type {
+
+      padding-bottom: 14px !important;
+
+    }
+
+    &:first-of-type {
+
+      padding-top: 14px !important;
+
+    }
+
+  }
+
+  .collapsible & {
+
+    background: color( white );
+    color: color( navy );
+
+    padding: 7px 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+
+    .dropdown-item {
+
+      color: color( navy );
+      width: 100% !important;
+      height: auto !important;
+      padding: 0;
+      line-height: 1em !important;
+
+      &:hover {
+
+        color: color( link-nav );
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+// main content styles
+
+div {
+
+  // test styles
+  // border: 1px solid rgba(255, 0, 0, .25);
+
+  @include copy-style;
+
+  .h1 {
+
+    @extend h1;
+
+  }
+
+  .h2 {
+
+    @extend h2;
+
+  }
+
+  .h3 {
+
+    @extend h3;
+
+  }
+
+  h3 {
+
+    margin-bottom: 18px;
+
+    #divcolDescription & {
+
+      font-weight: 400 !important;
+      font-size: 30px;
+
+      @include media( $landscape-break ) {
+
+        font-size: 36px;
+
+      }
+
+    }
+
+  }
+
+  .h4 {
+
+    @extend h4;
+
+  }
+
+  .h5 {
+
+    @extend h5;
+
+  }
+
+  .h6 {
+
+    @extend h6;
+
+  }
+
+  hr,
+  hr:not(.rule-loading) {
+
+    height: 0;
+    border: inherit;
+    border-top: 1px solid color( navy );
+    width: 100%;
+    margin: 0;
+    margin-bottom: 2em;
+
+    background-image: none;
+
+  }
+
+  hr.featured-rule {
+    border: none;
+
+    height: 18px;
+    width: 59px;
+
+    margin: 0 auto 20px;
+
+    background-image: url('ornament.svg');
+    background-repeat: no-repeat;
+
+    @include media( $tablet-break ) {
+
+      height: 24px;
+      width: 74px;
+      margin-bottom: 45px;
+
+    }
+
+  }
+
+  // narrow columns
+
+  .col-xs-12 .mx-auto>.card
+  #ctl00_eTAMContent_uploaddiv { // sign in
+
+    max-width: 600px;
+    margin: 0 auto;
+
+  }
+
+  a:not( .btn ) {
+
+    .page-footer & {
+
+      border-bottom: none !important;
+
+    }
+
+  }
+
+
+}
+
+// footer
+
+// custom footer HTML
+
+/* ***********************************************************
+
+<html><body>
+
+<div class="d-flex flex-row text-center footer-custom-address">
+
+<h4 class="pjg-address">Portland Japanese Garden &ndash; 611 SW Kingston Ave., Portland, Oregon 97205</h4>
+
+</div>
+
+<div class="d-flex flex-row text-center footer-custom-nav">
+
+  <div class="col-sm-4 small"><a href="https://japanesegarden.org/faq/" target="_blank">FAQ</a></div>
+
+  <div class="col-sm-4 small"><a href="https://japanesegarden.org/contact-us/" target="_blank" >Contact Us</a></div>
+
+  <div class="col-sm-4 small"><a class="btn" href="/SignIn.aspx">Members Login</a></div>
+
+  <div class="col-sm-4 small"><a href="https://japanesegarden.org/gift-shop-shipping-faqs/" target="_blank" >Shipping and Return Policy</a></div>
+
+  <div class="col-sm-4 small"><a href="https://japanesegarden.org/privacy-policy/" target="_blank" >Privacy Policy</a></div>
+
+  <div class="col-sm-4 small"><a href="https://japanesegarden.org/gift-shop-terms-of-service/" target="_blank" >Terms of Service</a></div>
+
+</div>
+
+</body></html>
+
+***************************************************************/
+
+.page-footer,
+#ctl00_eTAMFooter {
+
+  @extend .container;
+
+  padding-top: 18px;
+  margin-top: 70px;
+  border-top: 3px solid color( navy );
+
+  .row {
+
+    margin-bottom: 0 !important;
+
+    @include media( $landscape-break ) {
+
+      margin-bottom: 18px !important;
+
+    }
+
+  }
+
+  #divModalRow,
+  #divSupportFooterRow + div { // sigh...
+
+    display: none; // hiding TAM's footer nav until modal pages can be built out. Leaving rest of CSS in case that happens
+
+    padding: 0 0 20px;
+
+    & > .h6 {
+
+      // undo all this h6 stuff
+      border-top: none;
+      margin: 0 0 18px;
+      @include font-allcaps;
+      font-weight: normal;
+      padding-top: 0 !important;
+
+    }
+
+    & > div > a {
+
+      line-height: 1.3;
+      margin-bottom: 15px;
+      font-size: 18px;
+
+      border: none;
+
+    }
+
+    @include media( $landscape-break ) {
+      border-bottom: 3px solid color( navy );
+
+      margin: 0;
+
+      & > .h6 {
+
+        margin: 0;
+
+      }
+
+      & > div > a {
+
+        margin-bottom: 0;
+
+      }
+
+    }
+
+  }
+
+  #divSupportFooterRow,
+  #divSearchFooterRow {
+
+    margin: 0 !important;
+
+  }
+
+
+  #divClientFooterRow,
+  #ctl00_ClientFooter,
+  #ctl00_divClientFooter { // make it look flus with above menu
+
+    margin-bottom: 0 !important;
+
+    .footer-custom-nav {
+
+      margin-bottom: 0;
+      flex-wrap: wrap;
+
+      border-bottom: 1px solid #253746;
+
+      & > * {
+
+        line-height: 1.3;
+        font-size: 18px;
+        border-bottom: none !important;
+
+        margin-bottom: 18px;
+
+        @include font-allcaps;
+
+        .btn {
+
+          margin: 0;
+
+        }
+
+        &:last-of-type {
+
+          margin-bottom: 9px;
+
+
+
+          @include media( $landscape-break ) {
+
+            margin-bottom: 0;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .footer-custom-address {
+
+      padding-top: 18px;
+      margin: 0 0 18px;
+      padding-bottom: 18px;
+      border-bottom:  1px solid color( navy );
+
+      .pjg-address {
+
+        width: 100%;
+        @include font-regular;
+        letter-spacing: normal;
+        margin-bottom: 0;
+
+
+      }
+
+    }
+
+    @include media( $landscape-break ) {
+
+      margin-top: 0;
+
+
+    }
+
+  }
+
+
+
+  #divScoailMediaCol,
+  // #divPoweredbyCol,
+  #divSocialMediaColumn {
+
+    display: none;
+
+  }
+
+  #ctl00_socialmediaul {
+
+    a {
+
+      border-bottom: none;
+
+    }
+
+  }
+
+}
+
+
+// various bits and pieces
+
+font {
+
+  font-size: inherit;
+
+}
+
+#ctl00_navAccountBar {
+
+  justify-content: space-between;
+
+  font-size: 80%;
+
+  div {
+
+    padding: 0;
+
+    &.col-5,
+    &#ctl00_divRightNav,
+    &#ctl00_divLeftNav {
+
+      flex: 0 0 25%;
+      display: flex !important;
+
+    }
+
+  }
+
+  @include media( $landscape-break ) {
+
+    font-size: 100%;
+
+
+
+    &.col-5 {
+
+      flex: inherit;
+
+    }
+
+  }
+
+}
+
+#PWelcomeMsg {
+
+  margin-top: -10px;
+  @extend p;
+
+}
+
+// remove callouts on sign in pages
+.new-to-site,
+.by-signing {
+
+  display: none;
+
+}
+
+
+
+#ctl00eTAMContent_lblPageTitle,
+#ctl00_eTAMContent_lblEvents,
+#AccountHeader,
+#ctl00_eTAMContent_lblAddressBookTitle,
+h3 b span {
+
+  @include font-subheadline;
+  font-size: 50px;
+  line-height: 56px;
+  letter-spacing: -.02em;
+
+
+  @include media( $landscape-break ) {
+
+    font-size: 70px;
+    line-height: 80px;
+
+  }
+}
+
+h3>b {
+
+  font-weight: 300;
+
+}
+
+
+#ctl00_eTAMContent_divPager {
+
+  br {
+
+    display: none;
+
+  }
+
+}
+
+.pagination {
+
+  .page-item {
+    border-color: color( navy );
+    color: color( navy );
+
+    border-radius: 0;
+
+    &:before {
+
+      display: none;
+
+    }
+
+    .page-link {
+
+      color: color( navy );
+
+      &:before {
+
+        display: none;
+        position: static;
+
+      }
+
+    }
+
+    &.active {
+
+      .page-link {
+
+        background-color: color( navy );
+        color: color( white );
+        border-color: color( navy );
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// side filter menu
+
+#ctl00_tdFilter {
+
+  #ctl00_BrowseFilterExplorer_tree {
+
+    .igeb_eTAMGroup {
+
+      border: none;
+      background: none;
+      height: auto;
+      line-height: 1.2;
+
+      a {
+
+        border-bottom: none;
+        text-decoration: none;
+        color: color( navy );
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// Mobile nav
+
+.side-nav,
+#divSideBarNav {
+
+  background-color: color( navy );
+
+  #divLogo,
+  #divLogoSBN {
+
+    margin-bottom: 10px;
+    padding-top:  .5rem;
+
+  }
+
+  &#tamSideBarNav {
+
+    width: 240px;
+    padding: 10px .25rem  60px !important;
+
+  }
+
+
+  .dropdown-menu.show {
+
+    background: color( white );
+    color: color( navy );
+
+    padding: 7px 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+
+    .dropdown-item {
+
+      color: color( navy );
+      width: 100% !important;
+      height: auto !important;
+      padding: 0;
+      line-height: 1em !important;
+
+      &:hover {
+
+        color: color( link-nav );
+
+      }
+
+    }
+
+  }
+  // hide social in mobile menu
+  .social,
+  &>.nav {
+
+    display: none !important;
+
+  }
+
+  #divSearch,
+  #divSearchSBN {
+
+    display: flex !important;
+    justify-content: space-around !important;
+
+    margin-bottom: -15px;
+
+    input {
+
+      height: 56px;
+      padding: 5px 10px !important;
+      margin-right: 0 !important;
+
+    }
+
+  }
+
+  .collapsible,
+  #ulSideBarNav {
+
+    width: 100%;
+    padding: 0 9px !important;
+    margin: 0;
+
+    li {
+
+      @include font-allcaps;
+      font-size: 18px;
+      line-height: 1.2;
+      letter-spacing: .08em;
+
+      margin: 0 0 15px 0 !important;
+      padding: 0 !important;
+      width: 100%;
+
+      &:before {
+
+        display: none;
+        position: static;
+
+      }
+
+      &>a {
+
+        display: block;
+        width: 100%;
+        height: auto;
+        border-bottom: none;
+        color: color( white );
+        padding: 0 !important;
+        font-size: inherit;
+
+        &:hover {
+
+          color: color( link-nav );
+          background-color: transparent;
+          text-decoration: none;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// product Grid
+
+.card-deck,
+.text-center {
+
+  br {
+
+    display: none;
+
+  }
+
+  h5,
+  .h5 { // a.h5
+
+    display: block;
+
+    @include font-headline;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: normal;
+
+    text-decoration: none;
+    border-bottom: none;
+
+    margin-bottom: 0;
+
+  }
+
+  img {
+
+    cursor: pointer;
+
+  }
+
+  .h6,
+  h6 {
+
+    @include font-bug;
+
+    display: block;
+    margin-bottom: 10px;
+
+    &.WasText {
+
+      margin-top: 15px;
+
+    }
+
+    &:first-of-type {
+
+      border-top: 1px solid color( navy );
+
+      margin-top: 10px;
+      padding-top: 10px;
+
+
+
+    }
+
+  }
+
+}
+
+
+
+.container { // attempt at main content
+
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 0 18px;
+
+  input[type="number"].form-control {
+
+    width: 60px;
+
+  }
+
+  .form-group:not(.mt-3) {
+
+    // padding-top: 10px;
+
+  }
+
+  figure > figcaption {
+
+    font-size: 100% !important;
+
+    border-bottom: 1px solid color( navy );
+
+    @include media( $tablet-break ) {
+
+      border-bottom: none;
+
+    }
+
+    &.text-center {
+
+      text-align: left !important;
+
+    }
+
+  }
+
+  #ctl00_eTAMContent_PurchaseUpdatePanel { // event ticket product panel
+
+    border-top: 1px solid color( navy );
+    padding-top: 10px;
+
+  }
+
+  .form-inline {
+
+    margin-bottom: 1rem;
+
+    & + hr {
+
+      display: none;
+
+    }
+
+  }
+
+  a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+
+    color: color( link-nav );
+
+  }
+
+
+  a.NonHyperlinkfont {
+
+    border: none;
+    text-decoration: none;
+    color: inherit;
+
+    &[data-toggle='collapse'] {
+
+      font-size: 75%;
+
+    }
+
+  }
+
+
+  h3 { // Product title
+
+    @include font-headline;
+    letter-spacing: normal;
+
+    font-size: 28px;
+    line-height: 1.3;
+
+    font-weight: 400 !important;
+
+    &.SelectSKUDesc {
+
+      @include media( $tablet-break ) {
+
+        font-size: 42px;
+
+      }
+
+      font-size: 42px;
+
+    }
+
+  }
+
+  .SelectSKUSellingPrice,
+  .SelectSKUSalePrice,
+  .SelectSKUWasText {
+
+    @include font-bug;
+
+    letter-spacing: normal;
+
+    font-size: 28px;
+
+  }
+
+  .SelectSKUSalePrice ~ .SelectSKUSellingPrice,
+  .SelectSKUWasText {
+
+    font-size: 18px;
+
+  }
+
+  .SellingPrice,
+  .SalePrice {
+
+    letter-spacing: normal;
+
+  }
+
+  @include media( $max-break ) {
+
+    padding: 0;
+
+  }
+
+  #divDocialmediaSku,
+  #divSocialmediaSku { // social share icons on standard products, memberships, not events!
+
+    border-top: 1px solid color( navy );
+    padding-top: 0;
+    margin-bottom: 0;
+
+    & > * {
+
+      display: none;
+
+    }
+
+  }
+
+  .flex-row {
+
+    margin-bottom: 18px;
+
+    &#Accountheaderrow {
+
+      margin-bottom: 0;
+
+    }
+
+  }
+
+  .row:not( #ctl00_eTAMContent_tblPageNum ) {
+
+    margin-bottom: 18px;
+
+    justify-content: space-between;
+
+    &> * {
+
+      margin-bottom: 10px;
+
+    }
+
+  }
+
+}
+
+
+// banners
+
+.homepage-banner {
+
+  img {
+
+    width: 100%;
+
+  }
+
+}
+
+
+// side filter form
+
+.drawer-nav {
+
+  padding: 10px;
+
+  input[type="text"] {
+
+    margin-left: 10px;
+    margin-bottom: 15px;
+
+  }
+
+  #ctl00_BrowseFilterExplorer {
+
+    margin-top: 10px;
+
+    .igeb_eTAMControl {
+
+      border: 1px solid color( navy );
+      padding-top: 5px;
+
+      ul {
+
+        li {
+
+          margin-bottom: 15px !important;
+
+          &:before {
+
+            display: none;
+            margin-left: 0;
+
+          }
+
+          .igeb_eTAMGroup {
+
+            font-size: 16px;
+
+          }
+
+          .igeb_eTAMItem  {
+
+            font-size: 14px;
+            margin-top: 10px;
+
+            .igeb_eTAMItemLink {
+
+              border-bottom: none;
+              text-decoration: none;
+
+              &:hover,
+              &.igeb_eTAMItemLinkHover {
+
+                background-color: transparent !important;
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> bootstrap overrides
+
+a {
+
+  cursor: pointer;
+
+}
+
+.small { // kill this
+
+  font-size: 100%;
+
+}
+
+.jumbotron { // normalize jumbotron
+
+  background: none;
+  padding: 0;
+  margin: 0 0 50px;
+
+}
+
+.fa-mouse-pointer,
+.fa-money { // font awesome icon on select buttons
+
+  display: none;
+
+}
+
+
+
+
+h6.row { // rows of product options like Admission tickets
+
+  @media ( max-width: 767px ) {
+
+    flex-wrap: nowrap;
+
+    & > * {
+
+      margin-left: 0 !important;
+      margin-bottom: 10px;
+      padding: 0 5px 0 0 !important;
+      float: none !important;
+
+      &.pl-3 { // "while open" line
+
+        display: none;
+
+      }
+
+    }
+
+  }
+
+}
+
+.d-flex:not(.navbar) { // stack on mobile
+
+  display: block !important;
+
+  @include media( $tablet-break ) {
+
+    display: flex !important;
+
+  }
+
+}
+
+#ctl00_eTAMContent_divPager .d-flex:not(.navbar) {
+
+  display: flex !important;
+
+  & > * {
+
+    margin: 0 !important;
+
+  }
+
+}
+
+img {
+
+  max-width: 100%;
+
+}
+
+body {
+
+  @include font-regular;
+
+}
+
+
+.card-block {
+
+  padding: .75rem 1.25rem;
+
+}
+
+// colors:
+.text-primary {
+
+  color: #253746;
+
+}
+
+.text-secondary {
+
+  color: #555555;
+
+}
+
+.text-success {
+
+  color: #b5bd00;
+
+}
+
+.text-danger {
+
+  color: #e44126;
+
+}
+
+.text-warning {
+
+  color: #c9b69d;
+
+}
+
+.text-info {
+
+  color: #999999;
+
+}
+
+// buttons
+
+.btn {
+
+  @include button;
+
+  transition: none;
+
+  box-shadow: none;
+  -webkit-appearance: none !important;
+
+  border-radius: 0 !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+
+    background-color: color( navy ) !important;
+    border-color: color( navy ) !important;
+    border-bottom: 1px solid color( navy );
+    color: color( white );
+    text-decoration: none;
+    box-shadow: none !important;
+
+  }
+
+  margin-bottom: 18px;
+
+  @include media( $tablet-break ) {
+
+    margin-bottom: 0;
+
+  }
+
+  &#ctl00_btnSearch {
+
+    padding: 10px 15px 8px !important;
+
+  }
+
+  &#ctl00_btnDonateNow {
+
+    border-bottom: 1px solid color(navy);
+
+    &:hover {
+
+      color: color( white );
+
+    }
+
+  }
+
+  // continue shopping buttons
+  &#ctl00_eTAMContent_btnContinueShopping,
+  &#ctl00_eTAMContent_PopUpMessage_btnContinue0,
+  &#ctl00_eTAMContent_btnContinueShopping2 {
+
+    border: none;
+
+    i {
+
+      display: none;
+
+    }
+
+    &:hover {
+
+      border-bottom: none !important;
+      text-decoration: underline;
+      color: color( link-nav );
+      background-color: transparent !important;
+
+
+    }
+
+  }
+
+  &#ctl00_eTAMContent_btnAddToCart {
+
+    font-size: 18px;
+
+  }
+
+}
+
+//////////////////// 2018-10 store update fixes
+
+.fa-2x {
+
+  font-size: 1.33333333em;
+  line-height: .75em;
+  vertical-align: -15%;
+
+}
+
+
+#ctl00_btnSBNDonateNow,
+#ctl00_btnSearchSN,
+#tamSideBarNav a {
+
+  display: block;
+  font-size: 1rem;
+  height: 56px;
+  // line-height: 56px;
+  line-height: 40px;
+  padding-left: 20px;
+
+}
+
+#ctl00_btnSBNSearch {
+
+  margin-bottom: 0;
+
+}
+
+#ctl00_txtSearch {
+
+  margin-right: .25rem;
+
+}
+
+#divLastRow {
+
+  justify-content: end;
+
+}

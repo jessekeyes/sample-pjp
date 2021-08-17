@@ -1,0 +1,83 @@
+{
+    "key": "group_58c1b167cd675",
+    "title": "Inspire Tiles",
+    "fields": [
+        {
+            "key": "field_58c1b1c9fbea4",
+            "label": "Inspire Tiles",
+            "name": "inspire_tiles",
+            "type": "repeater",
+            "instructions": "This first Inspire Tile will appear if at least 3 child pages exist. The second Inspire Tile will appear if at least 5 child pages exist. The space(s) will still appear, BLANK, if nothing is entered!",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 2,
+            "max": 2,
+            "layout": "row",
+            "button_label": "Add Inspire Tile",
+            "sub_fields": [
+                {
+                    "key": "field_58c1b216fbea5",
+                    "label": "Inspire Tile Text",
+                    "name": "inspire_tile_text",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
+                    "key": "field_58c1b29efbea6",
+                    "label": "Membership Benefit Promo",
+                    "name": "membership_benefit_promo",
+                    "type": "true_false",
+                    "instructions": "When checked, this overrides the Inspire Tile Text above and displays the membership benefit promo widget instead.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "page-child.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1489225039
+}

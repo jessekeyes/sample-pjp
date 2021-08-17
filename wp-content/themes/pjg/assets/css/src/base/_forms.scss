@@ -1,0 +1,535 @@
+/**
+ * Forms
+ */
+
+input[type=search],
+input[type=text],
+input[type=password],
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+  color: color( text-input );
+
+  border: 1px solid color( border-input );
+  border-radius: 3px;
+
+  &:focus {
+    color: color( text-input-focus );
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+  @include pad( 3px );
+}
+
+textarea {
+  width: 100%;
+}
+
+
+// button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  // padding: .6em 1em .4em;
+  //
+  // background: color( background-button );
+  // box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+  // color: rgba(0, 0, 0, .8);
+  //
+  // font-size: 0.75em;
+  // line-height: 1;
+  // text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  //
+  // border: 1px solid;
+  // border-color: color( border-button );
+  // border-radius: 3px;
+  //
+  // &:hover {
+  //   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+  //
+  //   border-color: color( border-button-hover );
+  // }
+  //
+  // &:active,
+  // &:focus {
+  //   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+  //
+  //   border-color: color( border-button-focus );
+  // }
+
+  @include button;
+
+  &.disabled {
+
+    opacity: 0.3;
+    pointer-events: none;
+
+  }
+
+}
+
+label {
+
+  display: block;
+
+}
+
+
+// forms mixins
+
+@mixin form-input {
+
+  outline: none;
+  width: 100%;
+
+  border: 1px solid color( navy  );
+  background-color: color( white );
+  border-radius: 0;
+  line-height: 1.5;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  @include font-subheadline;
+  @include antialias;
+  font-size: 20px;
+  padding: 5px 10px;
+
+  color: color( gray-medium );
+
+  @include media( $landscape-break ) {
+
+    .page-newsletter & {
+
+      font-size: 32px;
+
+    }
+
+  }
+
+
+}
+
+@mixin form-select {
+
+  @include form-input;
+
+  background-image: url( '#{$svg}/arrow-dropdown.svg' );
+  background-repeat: no-repeat;
+  background-position: right 7px center;
+  background-size: 19px 11px;
+
+
+}
+
+select::-ms-expand { // IE 11 and below, remove native styling
+
+    display: none;
+}
+
+@mixin form-date {
+
+  background-image: url( '#{$svg}/calendar.svg' );
+  background-repeat: no-repeat;
+  background-position: right 7px center;
+  background-size: 24px 23px;
+
+}
+
+@mixin form-label {
+
+  display: inline-block;
+  @include font-regular;
+  color: color( navy );
+  font-size: 20px;
+  line-height: 1.2;
+
+  .page-newsletter & {
+
+    &.gfield_label_before_complex {
+
+      display: none;
+    }
+
+  }
+
+  @include media( $landscape-break ) {
+
+    font-size: 22px;
+
+    .page-newsletter & {
+
+      font-size: 36px;
+
+      &.gfield_label_before_complex {
+
+        display: none;
+      }
+
+    }
+
+  }
+
+}
+
+@mixin form-click {
+
+  width: auto;
+
+}
+
+@mixin form-error {
+
+  @include form-label;
+  text-transform: uppercase;
+
+  color: color( red );
+
+  padding: 5px 10px 5px 0;;
+
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+
+
+}
+
+
+@mixin gform-structure {
+
+  .gform_validation_container, .gform_wrapper .gform_validation_container, body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container, body .gform_wrapper li.gform_validation_container, body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+
+    display: none!important;
+    position: absolute!important;
+    left: -9000px;
+
+  }
+
+  .gform_wrapper {
+
+    .gform_heading {
+
+      .gform_description {
+
+        span {
+
+          @include form-label;
+
+          background-color: color( pullquote );
+          color: color( white );
+
+          padding: 0 10px 5px;
+
+          .page-newsletter & {
+
+            font-size: 16px;
+
+            @include font-allcaps;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .gform_footer {
+
+      margin-top: 60px;
+      margin-bottom: 60px;
+
+    }
+
+    .gform_ajax_spinner {
+
+      display: none;
+
+    }
+
+    clear: both;
+
+    // unset reg list styles
+    &:before {
+
+      display: none;
+
+    }
+
+    ul {
+
+      margin: 0;
+
+      li {
+
+        margin-bottom: 10px;
+
+        &:before {
+
+          display: none;
+
+        }
+
+      }
+
+    }
+
+    .validation_error {
+
+      color: color( white );
+      background-color: color( red );
+      padding: 0 10px 5px;
+
+      margin-bottom: 36px;
+
+    }
+
+    .validation_message {
+
+      color: color( red );
+      @include font-allcaps;
+      font-size: 14px;
+      line-height: 1.2;
+      letter-spacing: 0.08em;
+
+      padding: 5px 0;
+
+      @include media( $landscape-break ) {
+
+        font-size: 15px;
+
+      }
+
+    }
+
+
+
+    .gfield {
+
+      max-width: 479px;
+
+      .page-newsletter & {
+
+        max-width: 100%;
+
+      }
+
+      .gfield_label,
+      label {
+
+        @include form-label;
+
+        margin-bottom: 10px;
+
+        .gfield_required {
+
+          display: none; // asterix
+
+        }
+
+      }
+
+      .ginput_container {
+
+        input {
+
+          &[type="text"],
+          &[type="date"],
+          &[type="email"],
+          &[type="tel"],
+          &[type="number"],
+          &[type="password"] {
+
+            @include form-input;
+
+          }
+
+        }
+
+        select {
+
+          @include form-select;
+
+        }
+
+      }
+
+      .ginput_complex {
+
+        margin-top: 20px;
+
+        .page-newsletter & {
+
+          &>span {
+
+            display: block;
+            margin-top: 36px;
+
+            &:first-of-type {
+
+              margin-top: 0;
+
+            }
+
+          }
+
+          @include media( $tablet-break ) {
+
+            display: flex;
+
+            &>span {
+
+              margin-top: 0;
+
+              margin-right: 20px;
+
+              &:last-of-type {
+
+                margin-right: 0;
+
+              }
+
+            }
+
+          }
+
+        }
+
+        .ginput_full,
+        .ginput_left,
+        .ginput_right { // full address thingie
+
+          display: block;
+
+          margin-bottom: 18px;
+
+          input {
+
+            &[type="text"],
+            &[type="date"],
+            &[type="email"],
+            &[type="tel"],
+            &[type="number"],
+            &[type="password"] {
+
+              @include form-input;
+
+            }
+
+          }
+
+          label {
+
+            @include form-label;
+            font-size: 95% !important;
+
+          }
+
+          select {
+
+            @include form-select;
+
+          }
+
+        }
+
+      }
+
+      &.gsection { // sections
+
+        padding-top: 27px;
+        border-top: 5px solid color( navy );
+        margin-top: 36px;
+
+        margin-bottom: 20px;
+
+        max-width: 100%;
+
+      }
+
+      &.gfield_contains_required {
+
+        .gfield_label {
+
+          background-color: color( pullquote );
+          color: color( white );
+
+          padding: 0 10px 5px;
+
+        }
+
+        &.gfield_error {
+
+          .gfield_label {
+
+            background-color: color( red );
+
+          }
+
+        }
+
+      }
+
+      &.field_sublabel_below,
+      &.field_sublabel_above
+       {
+
+        margin-top: 36px;
+
+      }
+
+      .gfield_radio,
+      .gfield_checkbox {
+
+        display: flex;
+
+        li {
+
+          display: flex;
+          align-items: center;
+
+          margin-bottom: 0;
+          margin-right: 27px;
+
+          input {
+
+            margin-top: 3px;
+
+          }
+
+          label {
+
+            @include form-label;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+
+}

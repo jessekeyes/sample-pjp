@@ -1,0 +1,948 @@
+/**
+ * Layout
+ */
+
+
+.hentry {
+
+  // @include center-block;
+
+}
+
+.entry-meta {
+
+  @include font-allcaps;
+  font-size: 14px;
+  line-height: 16px;
+  color: color( gray-light );
+
+  margin-bottom: 30px;
+
+  .wrapper-posts & {
+
+    margin-bottom: 10px;
+
+    .recurrence-description {
+
+      font-size: 14px;
+      margin-top: 10px;
+
+    }
+
+  }
+
+  .post-type-archive-event & {
+
+    margin-bottom: 0;
+
+  }
+
+  p {
+
+    margin-bottom: 10px;
+
+    &:last-of-type {
+
+      margin-bottom: 0;
+
+    }
+
+  }
+
+  a {
+
+    color: color( gray-light );
+
+    &:hover {
+
+      color: color( link-nav );
+
+    }
+
+  }
+
+  @include media( $tablet-break ) {
+
+    width: 83%;
+
+    font-size: 18px;
+    line-height: 20px;
+
+    margin-bottom: 60px;
+
+    .wrapper-posts & {
+
+      margin-bottom: 10px;
+
+    }
+
+  }
+
+  .event-date,
+  .entry-date
+    {
+
+    display: inline-block;
+
+    @include font-subheadline;
+    color: color( navy );
+    font-size: 22px;
+    line-height: 28px;
+
+    // margin-bottom: 10px;
+
+
+
+    &:hover {
+
+      .archive & {
+
+        color: color( link-nav );
+
+      }
+
+    }
+
+    .wrapper-posts & {
+
+      font-size: 20px;
+      line-height: 24px;
+
+    }
+
+    @include media( $tablet-break ) {
+
+      font-size: 44px;
+      line-height: 1.3;
+
+    }
+
+    @include media( $landscape-break ) {
+
+    .wrapper-posts & {
+
+        font-size: 22px;
+        line-height: 28px;
+
+      }
+
+    }
+
+  }
+
+
+
+}
+
+
+.event-wrapper {
+
+  @include center-block;
+  max-width: $max-width;
+
+  @include media( $tablet-break ) {
+
+    margin-top: 0
+
+  }
+
+  @include media( $landscape-break ) {
+
+    .event-sidebar &,
+    .single-post & {
+
+      @include display( flex );
+      @include justify-content( flex-start );
+
+      padding-left: 18px;
+      padding-right: 18px;
+
+    }
+
+  }
+
+  @include media( $max-break-plus ) {
+
+
+    .event-sidebar & {
+
+      padding-left: 0;
+      padding-right: 0;
+
+    }
+
+  }
+
+  &.post-cta {
+
+    @include media( $landscape-break ) {
+
+      .event-sidebar & {
+
+        .entry-content {
+
+          margin-right: auto !important;
+          margin-left: auto !important;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+
+  @include center-block;
+  max-width: $copy-max;
+
+  @include copy-style; // inherits copy styles
+
+  position: relative;
+
+  @include padding( content );
+
+  margin-bottom: 18px;
+
+  @include media( $landscape-break ) {
+
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+
+  @media( min-width: 1200px ) and ( max-width: 1271px ) {
+
+    max-width: 708px;
+
+  }
+
+
+  .page &,
+  .blog &,
+  .archive & {
+
+    margin-top: 72px;
+
+    @include media( $tablet-break ) {
+
+      margin-top: 0;
+
+    }
+
+  }
+
+  .type-event.event-sidebar:not( .item-search ) &,
+  .type-post.event-sidebar:not( .item-search ) & { //  single with
+
+
+    @include media( $landscape-break ) {
+
+      max-width: 685px;
+
+      margin-left: 18px;
+
+    }
+
+    @include media( $max-break ) {
+
+      margin-left: 36px;
+
+    }
+
+  }
+
+  .type-post.event-sidebar:not( .item-search ) &,
+  .type-event.event-sidebar-share:not( .item-search ) & {
+
+    @include media( $landscape-break ) {
+
+      max-width: $copy-max;
+    }
+
+  }
+
+
+  @include media( $tablet-break ) {
+
+    margin-bottom: 36px;
+
+  }
+
+
+  .video,
+  [class^="embed-"],
+  [class*=" embed-"] {
+
+    @extend %video;
+    clear: both;
+
+  }
+
+  .gallery-wrapper,
+  .video,
+  [class^="embed-"],
+  [class*=" embed-"],
+  .alignnone,
+  blockquote {
+
+    // js adds width css to each
+    max-width: 100%; // to stop glitch, adjusted with js
+
+    margin-left: -21px;
+
+    @include media( $tablet-break ) {
+
+      margin-left: 0;
+
+      max-width: 100%;
+
+    }
+
+    @include media( $landscape-break ) {
+      width: calc( 708px + 164px );
+      // margin-left: -82px;
+
+      .single-event &,
+      .single-post & {
+
+        top: 20px;
+        margin-bottom: 45px;
+
+      }
+
+    }
+
+    @include media( $max-break ) {
+
+      max-width: calc( 1200px - 72px );
+      width: calc( 1200px - 72px ) !important;
+      margin-left: calc( -206px + 36px );
+
+
+
+      .single-event &,
+      .single-post & {
+
+        width: 100% !important;
+        margin-left: 0;
+
+      }
+
+    }
+
+    @include media( min-width 1272px ) {
+
+      max-width: $max-width;
+      width: $max-width !important;
+
+      margin-left: calc( -206px );
+    }
+  }
+
+
+  .gallery-wrapper,
+  .video,
+  .alignnone {
+
+    @include media( $tablet-break ) {
+
+      width: 100% !important;
+
+    }
+
+    @include media( $landscape-break ) {
+
+      max-width: none;
+      width: calc( 1024px - 36px ) !important;
+      margin-left: -100px;
+
+      .single-event &,
+      .single-post & {
+
+        // margin-left: -290px;
+        width: 100% !important;
+
+      }
+
+
+    }
+
+    @include media( $max-break ) {
+
+      max-width: calc( 1200px - 72px );
+      width: calc( 1200px - 72px ) !important;
+      margin-left: calc( -206px + 36px );
+
+      .single-event &,
+      .single-post & {
+
+        // margin-left: calc( -206px + 36px -100px );
+        width: 100% !important;
+
+      }
+    }
+
+    @include media( min-width 1272px ) {
+
+      max-width: $max-width;
+      width: $max-width !important;
+
+      margin-left: calc( -206px );
+
+      .single-event &,
+      .single-post & {
+
+        // margin-left: -306px;
+        width: 100% !important;
+
+      }
+
+    }
+
+  }
+
+  .the-blue-bar & {
+
+    &>.has-the-blue-bar  {
+
+      position: relative;
+
+      @include the-blue-bar;
+
+      &>.gallery-wrapper,
+      &>.video,
+      &>[class^="embed-"],
+      &>[class*=" embed-"],
+      // &>.alignnone,
+      // &>blockquote
+      {
+
+        @include media( $landscape-break ) {
+
+          top: 20px;
+          margin-bottom: 45px;
+
+        }
+
+        @include media( $max-break ) {
+
+          top: 46px;
+          margin-bottom: 72px;
+
+        }
+
+      }
+
+
+    }
+
+    // begin endless line height compensation
+
+    &>h1.has-the-blue-bar,
+    &>h2.has-the-blue-bar, {
+
+      @include media( min-width 1300px ) {
+
+        &:before {
+
+          top: 10px !important;
+
+        }
+
+      }
+
+    }
+
+    &>h3.has-the-blue-bar,
+    &>h4.has-the-blue-bar,
+    &>h5.has-the-blue-bar,
+    &>h6.has-the-blue-bar, {
+
+      @include media( min-width 1300px ) {
+
+        &:before {
+
+          top: 8px !important;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .kanji {
+
+    float: left;
+
+    @include font-kanji;
+    color: color( navy );
+    font-size: 60px;
+    margin-right: 18px;
+    margin-bottom: 15px;
+    width: 100px;
+    line-height: 1.1em;
+
+    @include media( $tablet-break ) {
+
+      font-size: 65px;
+      margin-right: 36px;
+      width: 200px;
+      text-align: right;
+
+    }
+
+    @include media( $landscape-break ) {
+
+      margin-right: 36px;
+      margin-left: -81px;
+
+    }
+
+    @include media( $max-break ) {
+
+      font-size: 100px;
+      margin-right: 36px;
+      margin-left: -100px;
+      width: 300px;
+
+    }
+
+  }
+
+  .parking-widget {
+
+    @include center-block;
+
+    width: 200px;
+
+    margin-bottom: 18px;
+
+    iframe {
+
+      height: 250px;
+
+    }
+
+    &:before { // the blue bar
+
+      display: none;
+
+    }
+
+    @include media( $tablet-break ) {
+
+      float: left;
+      margin-right: 36px;
+      padding-top: 10px;
+
+      margin-bottom: 18px;
+
+
+    }
+
+    @include media( min-width 1300px ) {
+
+      &:before {
+
+        top: 10px !important;
+
+        display: block;
+
+      }
+
+    }
+
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+
+    clear: none; // override for wrapping, could be glitchy...
+
+  }
+
+}
+
+.entry-summary {
+
+  padding: 0;
+
+  margin-bottom: 0;
+
+  margin-top: 0 !important;
+
+  p {
+
+    line-height: 1.7;
+    margin-bottom: 0;
+
+  }
+
+}
+
+.pagination {
+
+  margin-bottom: 54px;
+
+  @include media( $tablet-break ) {
+
+    margin-bottom: 90px;
+    margin-top: -50px;
+
+  }
+
+  @include media( $landscape-break ) {
+
+    margin-bottom: 90px;
+    margin-top: -90px;
+
+  }
+
+}
+
+.entry-content {
+
+  .home & {
+
+    margin-bottom: 18px;
+
+  }
+
+  margin-bottom: 54px;
+
+  @include media( $tablet-break ) {
+
+    margin-bottom: 90px;
+
+  }
+
+}
+
+.sidebar-event {
+
+  width: 100%;
+
+  @include media( $landscape-break ) {
+
+    max-width: 273px;
+
+    .event-sidebar-share & {
+
+      max-width: 170px;
+
+    }
+
+  }
+
+  .event-widget {
+
+    background: color( navy );
+    text-align: center;
+    padding: 20px;
+    margin-right: 18px;
+    margin-left: 18px;
+    margin-bottom: 9px;
+
+    @include media( $landscape-break ) {
+
+      margin-left: 0;
+      margin-right: 0;
+
+    }
+
+
+    .price-title {
+
+      @include font-allcaps;
+      font-size: 15px;
+      color: color( white );
+
+      margin-bottom: 15px;
+
+      @include media( $landscape-break ) {
+
+        font-size: 16px;
+
+        margin-bottom: 20px;
+
+      }
+
+    }
+    .price-copy {
+
+      color: color( white );
+
+      @include font-bug;
+
+      margin-bottom: 15px;
+
+      a {
+
+        color: color( white );
+
+        &:hover {
+
+          color: color( link-nav );
+
+        }
+
+      }
+
+      @include media( $landscape-break ) {
+
+        // margin-bottom: 20px;
+
+      }
+
+      .button {
+
+        @include button;
+        @include button-dark;
+
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+      }
+
+      p {
+
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 15px;
+
+      }
+
+      &>*:last-child {
+
+        margin-bottom: 0;
+
+      }
+
+    }
+
+    .calendar-add {
+
+      @include font-allcaps;
+      color: color( white );
+      font-size: 13px;
+
+    }
+
+    .calendar-drawer {
+
+      @include center-block;
+
+      width: 100px;
+
+      height: 0;
+      transition: height 250ms;
+      overflow: hidden;
+
+      text-align: left;
+
+      &.open {
+
+        height: 120px;
+        transition: height 250ms;
+
+      }
+
+      .add-cal {
+
+        @include font-bug;
+        color: color( white );
+
+        display: block;
+        position: relative;
+        color: color( white );
+        text-decoration: none;
+        margin-left: 35px;
+
+        margin-bottom: 20px;
+
+        &:before {
+
+          position: absolute;
+          top: -2px;
+          left: -35px;
+          content: '';
+          background-image: url( '#{$svg}/calendar-white.svg');
+          background-repeat: no-repeat;
+          width: 24px;
+          height: 23px;
+
+        }
+
+        &:hover {
+
+          color: color( link-nav );
+
+          &:before {
+
+            background-image: url( '#{$svg}/calendar-hover.svg');
+
+          }
+
+        }
+
+
+        &:first-child {
+
+          margin-top: 15px;
+
+        }
+
+
+
+      }
+
+    }
+
+    @include media( $landscape-break ) {
+
+      margin-top: 20px;
+
+    }
+
+
+    &>*:last-child {
+
+      margin-bottom: 0;
+
+    }
+
+  }
+
+
+}
+
+
+
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+
+
+// firefox only pixels fixes
+
+@-moz-document url-prefix() {
+
+  .main-navigation ul#global-menu {
+
+    height: 28px;
+
+  }
+
+  .load-more .load-more-action, .submit-form .load-more-action {
+
+    height: 58px !important;
+
+  }
+
+}
+
+
+.sponsor-grid {
+
+  .sponsor-row-wrapper {
+
+    @include media( $tablet-break ) {
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+
+  }
+
+  .sponsor-row {
+
+    margin-bottom: 36px;
+
+    @include media( $tablet-break ) {
+
+      margin-bottom: 60px;
+
+    }
+
+    .sponsor-row-title {
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .sponsor-cell {
+
+      text-align: center;
+
+      margin-bottom: 36px;
+
+      &:last-child {
+
+        margin-bottom: 0;
+
+      }
+
+      @include media( $tablet-break ) {
+
+        flex: 0 1 auto;
+        margin-right: 36px;
+        margin-bottom: 0;
+
+      }
+
+      &:last-child {
+
+        margin-right: 0;
+
+        width: 100%;
+
+      }
+
+      img {
+
+        margin: 0 auto;
+        max-height: 200px;
+
+        @include media( $tablet-break ) {
+
+          max-height: 400px;
+
+        }
+
+      }
+
+      p { // inherits body copy p styles
+
+        @include font-italic;
+        margin-bottom: 0;
+        margin-top: 12px;
+        line-height: 1.2;
+        text-align: left;
+
+
+      }
+
+    }
+
+  }
+
+
+}

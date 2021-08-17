@@ -1,0 +1,382 @@
+/**
+ * Base
+ */
+
+@import "font-face";
+@import "typography";
+@import "forms";
+@import "copy";
+@import "content-area";
+
+
+//resets
+
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	// font-size: 100%;
+	// font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+dfn,
+cite,
+em,
+i {
+
+	font-family: inherit;
+
+	font-style: italic;
+
+  .entry-title & {
+
+    @include font-subheadline-italic; // Light
+    font-style: normal;
+
+  }
+
+	.child-post & { // child pages
+
+		@include media( $landscape-break ) {
+
+			@include font-headline-italic; // Thin
+
+		}
+
+
+	}
+
+  .title-wrapper & {
+
+    @include font-italic; // Light
+    font-style: normal;
+
+		// @include media( $tablet-break ) {
+    //
+		// 	@include font-headline-italic; // Thin
+    //
+		// }
+
+  }
+
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+// Elements
+body {
+  background: color( background-body ); /* Fallback for when there is no custom background color defined. */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+	font-weight: normal;
+}
+
+blockquote,
+q {
+  quotes: "" "";
+
+  &:before,
+  &:after {
+    content: "";
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+img,
+iframe,
+embed,
+object {
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
+	display: block;
+}
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+a {
+  color: color( link );
+
+  &:visited { color: color( link-visited ); }
+
+  &:hover,
+  &:focus,
+  &:active { color: color( link-hover ); }
+
+  &:focus { outline: thin dotted; }
+
+  &:hover,
+  &:active { outline: 0; }
+}
+
+// Classes
+
+.container {
+  @include container();
+}
+
+.fake-img {
+  @include fake-img();
+}
+
+.hidden {
+  @include hidden;
+}
+
+.visuallyhidden {
+  @include visuallyhidden;
+}
+
+.cloak {
+  @include cloak;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+// Text meant only for screen readers.
+.screen-reader-text {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+
+  &:hover,
+  &:active,
+  &:focus {
+    top: 5px;
+    left: 5px;
+    display: block;
+    height: auto;
+    width: auto;
+    padding: 15px 23px 14px;
+    clip: auto !important;
+    z-index: 100000; /* Above WP toolbar. */
+
+    background-color: color( background-screen );
+    color: color( text-screen );
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: normal;
+    text-decoration: none;
+
+    border-radius: 3px;
+  }
+}
+
+// Alignment
+
+
+.alignleft {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 2em;
+  margin-left: auto;
+
+  @include media( $tablet-break ) {
+
+      display: inline;
+      float: left;
+      margin-right: 2em;
+
+			.event-sidebar & {
+
+				&:first-child {
+
+					margin-left: 0 !important;
+
+				}
+
+			}
+
+  }
+
+	@include media( $landscape-break ) {
+
+		margin-left: -84px;
+
+	}
+
+  @include media( $max-break ) {
+    margin-left: calc( -206px + 36px );
+  }
+
+  @include media( min-width 1272px ) {
+
+    margin-left: calc( -206px );
+  }
+}
+
+.alignright {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 2em;
+  margin-left: auto;
+
+
+  @include media( $tablet-break ) {
+
+      display: inline;
+      float: right;
+      margin-left: 2em;
+
+
+  }
+
+	@include media( $landscape-break ) {
+
+		margin-right: -84px;
+
+		.event-sidebar & {
+
+			margin-right: -11px;
+
+		}
+
+	}
+
+  @include media( $max-break ) {
+
+    margin-right: calc( -206px + 36px );
+
+		.event-sidebar & {
+
+			margin-right: calc( -206px + 36px );
+
+		}
+
+  }
+
+  @include media( min-width 1272px ) {
+
+    margin-right: calc( -206px );
+
+
+		.event-sidebar & {
+
+			margin-right: calc( -206px );
+
+		}
+
+
+  }
+
+}
+
+.aligncenter {
+
+  @include center-block;
+  max-width: 100%;
+
+	@include media( $tablet-break ) {
+
+		max-width: $copy-max;
+
+	}
+
+}
+
+.alignnone {
+
+	// see posts-pages
+	img {
+
+			width: 100%;
+			max-width: $max-width;
+
+	}
+
+}
+
+// Clearing
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  @include clearfix;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  @include clearfix-after;
+}
