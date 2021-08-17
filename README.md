@@ -2,7 +2,9 @@
 Sample code of the Portland Japanese Garden WordPress Theme
 
 https://japanesegarden.org
+
 October 2019
+
 Still relevant as of August 2021
 
 ___
